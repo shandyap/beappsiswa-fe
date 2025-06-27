@@ -1,9 +1,18 @@
-import React from 'react'
+import { Container } from 'react-bootstrap';
 
 const FooterComponent = () => {
-  return (
-    <div>Ini Footer</div>
-  )
-}
+  // Mengambil tahun saat ini secara dinamis
+  const currentYear = new Date().getFullYear();
 
-export default FooterComponent
+  return (
+    <footer className="footer-custom">
+      <Container>
+        <p className="footer-text">
+          &copy; {currentYear} BeAppsiswa. Hak Cipta Dilindungi.
+        </p>
+      </Container>
+    </footer>
+  );
+};
+
+export default FooterComponent;
