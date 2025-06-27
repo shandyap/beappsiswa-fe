@@ -1,5 +1,5 @@
 /* ============================================= */
-/* 1. DEFINISI VARIABEL WARNA DASAR       */
+/*  DEFINISI VARIABEL WARNA DASAR       */
 /* ============================================= */
 
 * {
@@ -41,7 +41,7 @@
 
 
 /* ============================================= */
-/* 2. STYLING UNTUK NAVBAR                */
+/*  STYLING UNTUK NAVBAR                */
 /* ============================================= */
 
 /* Container utama navbar */
@@ -70,7 +70,7 @@
   padding-bottom: 0.5rem;
   margin-left: 1rem; /* Jarak antar link */
 
-    /* Trik agar layout tidak "lompat" saat border muncul di hover/active */
+  /* Trik agar layout tidak "lompat" saat border muncul di hover/active */
   border-bottom: 2px solid transparent; 
   
   /* Animasi transisi yang halus */
@@ -93,9 +93,47 @@
   border-bottom-color: var(--color-primary-perlombaan);
 }
 
+/* src/components/SearchBar/SearchBar.css */
+
+.search-bar-container {
+  display: flex;
+  background-color: var(--raw-color-white);
+  border-radius: 12px;
+  padding: 0.5rem;
+  max-width: 600px;
+  margin: 0 auto; /* Tengah */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  flex-grow: 1; /* Input akan mengisi ruang yang tersedia */
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: var(--text-primary);
+}
+
+.search-button {
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: #d97706; /* Warna oranye sedikit lebih gelap */
+}
+
 
 /* ============================================= */
-/* 3. STYLING UNTUK FOOTER                */
+/*  STYLING UNTUK FOOTER                */
 /* ============================================= */
 .footer-custom {
   background-color: var(--bg-footer); 
