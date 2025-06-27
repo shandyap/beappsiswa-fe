@@ -1,0 +1,113 @@
+/* ============================================= */
+/* 1. DEFINISI VARIABEL WARNA DASAR       */
+/* ============================================= */
+
+* {
+    font-family: 'Inter', sans-serif;
+
+}
+:root {
+  /* Palet Warna Mentah dari Figma */
+  --raw-color-blue: #4D57D6;
+  --raw-color-purple: #6551CF;
+  --raw-color-green-bright: #12B981;
+  --raw-color-green-muted: #4FB574;
+  --raw-color-orange: #F59E0C;
+  --raw-color-dark-navy: #1F2937;
+  --raw-color-gray: #8C929C;
+  --raw-color-white: #ffffff;
+  --raw-color-light-gray: #f8fafc;
+  --raw-color-border: #F9FAFB;
+
+  /* Variabel Semantik (Berdasarkan Penggunaan) */
+  --color-primary-beasiswa: var(--raw-color-purple); /* Dipilih ungu agar lebih kontras */
+  --color-primary-perlombaan: var(--raw-color-green-bright);
+  --color-hero-gradient: linear-gradient(to bottom right, var(--raw-color-blue), var(--raw-color-purple));
+
+  --color-accent: var(--raw-color-orange);
+  --color-accent-contrast: var(--raw-color-white);
+
+  --text-primary: var(--raw-color-dark-navy);
+  --text-secondary: var(--raw-color-gray);
+  --text-on-dark: var(--raw-color-white);
+  --text-on-primary: var(--raw-color-white);
+
+  --bg-body: var(--raw-color-white);
+  --bg-card: var(--raw-color-light-gray);
+  --bg-footer: var(--raw-color-dark-navy);
+
+  --border-color: var(--raw-color-border);
+}
+
+
+/* ============================================= */
+/* 2. STYLING UNTUK NAVBAR                */
+/* ============================================= */
+
+/* Container utama navbar */
+.custom-navbar {
+  background-color: var(--bg-body) !important;
+  border-bottom: 1px solid var(--border-color);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Logo "BeAppsiswa"  */
+.brand-logo {
+  font-weight: bold;
+  color: var(--raw-color-purple) !important;
+  font-size: 1.75rem;
+}
+
+.app-green {
+    color: var(--raw-color-green-bright)
+}
+
+/* Style dasar untuk semua link navigasi */
+.custom-navbar .nav-link {
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding-bottom: 0.5rem;
+  margin-left: 1rem; /* Jarak antar link */
+
+    /* Trik agar layout tidak "lompat" saat border muncul di hover/active */
+  border-bottom: 2px solid transparent; 
+  
+  /* Animasi transisi yang halus */
+  transition: all 0.2s ease-in-out; 
+  
+
+}
+
+/* Efek untuk link Beasiswa saat ACTIVE atau di-HOVER */
+.nav-link-beasiswa.active,
+.nav-link-beasiswa:hover {
+  color: var(--color-primary-beasiswa) !important;
+  border-bottom-color: var(--color-primary-beasiswa);
+}
+
+/* Efek untuk link Perlombaan saat ACTIVE atau di-HOVER */
+.nav-link-perlombaan.active,
+.nav-link-perlombaan:hover {
+  color: var(--color-primary-perlombaan) !important;
+  border-bottom-color: var(--color-primary-perlombaan);
+}
+
+
+/* ============================================= */
+/* 3. STYLING UNTUK FOOTER                */
+/* ============================================= */
+.footer-custom {
+  background-color: var(--bg-footer); 
+  color: var(--text-on-dark);
+  padding: 1.5rem 0;
+  
+  /* Memastikan footer menempel di bagian bawah halaman */
+  margin-top: auto; 
+}
+
+.footer-text {
+  text-align: center;
+  margin-bottom: 0; 
+  font-size: 0.9rem;
+}
