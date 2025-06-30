@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSearchParams } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 function SearchBar({ onSearch, placeholderText, className }) {
   
@@ -34,7 +35,9 @@ function SearchBar({ onSearch, placeholderText, className }) {
         value={keyword}
         onChange={(event) => setKeyword(event.target.value)}
       />
-      <button type="submit" className="search-button">Cari</button>
+      <Button type="submit" className="btn-custom-accent">
+        Cari
+      </Button>
     </form>
   );
 }
