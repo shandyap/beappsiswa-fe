@@ -13,6 +13,7 @@
   --raw-color-green-bright: #12B981;
   --raw-color-green-muted: #4FB574;
   --raw-color-orange: #F59E0C;
+  --raw-color-orange-dark: #d97706;
   --raw-color-dark-navy: #1F2937;
   --raw-color-gray: #8C929C;
   --raw-color-white: #ffffff;
@@ -25,6 +26,7 @@
   --color-hero-gradient: linear-gradient(to bottom right, var(--raw-color-blue), var(--raw-color-purple));
 
   --color-accent: var(--raw-color-orange);
+  --color-accent-hover: var(--raw-color-orange-dark);
   --color-accent-contrast: var(--raw-color-white);
 
   --text-primary: var(--raw-color-dark-navy);
@@ -37,6 +39,12 @@
   --bg-footer: var(--raw-color-dark-navy);
 
   --border-color: var(--raw-color-border);
+
+  --btn-color-beasiswa-hover: #5743BA;
+  --btn-color-beasiswa-active: #4A389F;
+
+  --btn-color-perlombaan-hover: #0FA172;
+  --btn-color-perlombaan-active: #0C8960;
 }
 
 
@@ -79,19 +87,24 @@
 
 }
 
-/* Efek untuk link Beasiswa saat ACTIVE atau di-HOVER */
+/* Efek untuk link Navigasi Beasiswa saat ACTIVE atau di-HOVER */
 .nav-link-beasiswa.active,
 .nav-link-beasiswa:hover {
   color: var(--color-primary-beasiswa) !important;
   border-bottom-color: var(--color-primary-beasiswa);
 }
 
-/* Efek untuk link Perlombaan saat ACTIVE atau di-HOVER */
+/* Efek untuk link Navigasi Perlombaan saat ACTIVE atau di-HOVER */
 .nav-link-perlombaan.active,
 .nav-link-perlombaan:hover {
   color: var(--color-primary-perlombaan) !important;
   border-bottom-color: var(--color-primary-perlombaan);
 }
+
+
+/* ============================================= */
+/*  STYLING UNTUK SEARCHBAR              */
+/* ============================================= */
 
 /* src/components/SearchBar/SearchBar.css */
 
@@ -100,7 +113,7 @@
   background-color: var(--raw-color-white);
   border-radius: 12px;
   padding: 0.5rem;
-  max-width: 600px;
+  max-width: 80%;
   margin: 0 auto; /* Tengah */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -115,22 +128,308 @@
   color: var(--text-primary);
 }
 
-.search-button {
-  background-color: var(--color-accent);
-  color: var(--color-accent-contrast);
-  border: none;
-  border-radius: 8px;
-  padding: 0.75rem 1.5rem;
+/* Custom Styling Button Bootstrap */
+
+/* Style utama untuk tombol custom kita */
+.btn-custom-accent {
+  /* Menggunakan variabel warna kita */
+  --bs-btn-bg: var(--color-accent); /* Warna background */
+  --bs-btn-border-color: var(--color-accent); /* Warna border */
+  --bs-btn-color: var(--color-accent-contrast); /* Warna teks */
+  
+  /* Style untuk state hover & active */
+  --bs-btn-hover-bg: #d97706; /* Oranye lebih gelap untuk hover */
+  --bs-btn-hover-border-color: #d97706;
+  --bs-btn-active-bg: #b45309; /* Oranye lebih gelap lagi untuk active/klik */
+  --bs-btn-active-border-color: #b45309;
+
+  /* Menghilangkan 'glow' biru bawaan bootstrap saat tombol di-fokus */
+  --bs-btn-focus-shadow-rgb: 245, 158, 11; /* RGB dari warna oranye kita */
+  
+  /* Styling tambahan */
   font-weight: bold;
+  padding: 0.75rem 1.5rem;
+}
+
+
+/* ============================================= */
+/*  STYLING UNTUK HERO SECTION                */
+/* ============================================= */
+
+/* Style dasar yang berlaku untuk semua variant hero section */
+.hero-section {
+  padding: 6rem 1.5rem; /* Memberi ruang atas-bawah yang cukup */
+  text-align: center;
+  color: var(--text-on-dark); /* Warna teks putih dari variabel global */
+  
+}
+
+/* Variant untuk Halaman Beasiswa */
+.hero-section.beasiswa {
+  background: var(--color-hero-gradient); /* Menggunakan gradasi diagonal */
+  width: 100%;
+}
+
+/* Variant untuk Halaman Perlombaan */
+.hero-section.perlombaan {
+  background-color: var(--color-primary-perlombaan); /* Menggunakan warna hijau solid */
+  width: 100%;
+}
+
+/* Wadah untuk konten agar mudah diatur posisinya */
+.hero-content {
+  max-width: 80%px;
+  margin: 0 auto; /* Otomatis berada di tengah secara horizontal */
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+/* Style untuk teks oranye yang di-highlight */
+.hero-section h1 .highlight {
+  color: var(--color-accent);
+}
+
+.hero-section p {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  margin-bottom: 2.5rem; /* Jarak ke search bar */
+}
+
+
+/* ============================================= */
+/*  STYLING UNTUK Card Beasiswa                */
+/* ============================================= */
+
+/* Style dasar untuk semua kartu */
+.card-beasiswa {
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-top: 4px solid transparent; /* Border awal transparan */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-beasiswa:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  color: var(--text-on-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.tags-container {
+  display: flex;
+  gap: 0.5rem; /* Memberi jarak 8px antar tag */
+}
+
+.deadline {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.card-title {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-description {
+  color: var(--text-secondary);
   font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  flex-grow: 1; /* Membuat deskripsi mengisi ruang agar tombol selalu di bawah */
+  margin-bottom: 1.5rem;
 }
 
-.search-button:hover {
-  background-color: #d97706; /* Warna oranye sedikit lebih gelap */
+.btn-card {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  font-weight: bold;
+  color: var(--text-on-primary);
 }
 
+/* --- VARIASI WARNA BERDASARKAN TEMA --- */
+
+/* Tema 'beasiswa' (Biru/Ungu) */
+.card-beasiswa.beasiswa { border-top-color: var(--color-primary-beasiswa); }
+.tag.beasiswa { background-color: var(--color-primary-beasiswa); }
+.btn-card.beasiswa { background-color: var(--color-primary-beasiswa); }
+.btn-card.beasiswa:hover {
+  background-color: var(--btn-color-beasiswa-hover);
+}
+.btn-card.beasiswa:active {
+  background-color: var(--btn-color-beasiswa-active);
+}
+/* Tema 'perlombaan' (Hijau) */
+.card-beasiswa.perlombaan { border-top-color: var(--color-primary-perlombaan); }
+.tag.perlombaan { background-color: var(--color-primary-perlombaan); }
+.btn-card.perlombaan { background-color: var(--color-primary-perlombaan); }
+.btn-card.perlombaan:hover{
+  background-color: var(--btn-color-perlombaan-hover);
+}
+.btn-card.perlombaan:active {
+  background-color: var(--btn-color-perlombaan-active);
+}
+
+/* Tema 'accent' (Oranye) */
+.card-beasiswa.accent { border-top-color: var(--color-accent); }
+.tag.accent { background-color: var(--color-accent); }
+.btn-card.accent { background-color: var(--color-accent); }
+.btn-card.accent:hover {
+  background-color: var(--color-accent-hover); /* Oranye lebih gelap saat hover */
+}
+.btn-card.accent:active {
+  background-color: #b45309;
+}
+
+
+/* ============================================= */
+/*  STYLING UNTUK LIST BEASISWA                */
+/* ============================================= */
+
+/* src/components/BeasiswaList/BeasiswaList.css */
+.beasiswa-list-container {
+  display: grid;
+  /* Membuat 2 kolom di desktop, dan 1 kolom di mobile */
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem; /* Jarak antar kartu */
+  padding: 3rem 0; /* Beri ruang atas dan bawah untuk section */
+}
+
+
+/* ============================================= */
+/*  STYLING UNTUK CARD PERLOMBAAN                */
+/* ============================================= */
+
+/* src/components/PerlombaanCard/PerlombaanCard.css */
+
+/* Layout utama kartu menggunakan Flexbox */
+.card-lomba {
+  display: flex;
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden; /* Penting agar border-radius berfungsi di anak elemen */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+}
+
+
+/* Sisi Kiri (Tanggal) */
+.date-section {
+  padding: 1.5rem;
+  color: var(--text-on-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px; /* Lebar minimum untuk bagian tanggal */
+}
+
+.date-section .day {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.date-section .month-year {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Sisi Kanan (Info) */
+.info-section {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Mengisi sisa ruang */
+}
+
+.info-section .tag {
+  align-self: flex-start; /* Tag menempel di kiri */
+  color: var(--text-on-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 1.4rem;
+}
+
+.info-section .card-title {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.info-section .card-description {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  flex-grow: 1; /* Mendorong tombol ke bawah */
+  margin-bottom: 1.9rem;
+}
+
+.info-section .btn-card {
+  align-self: flex-start; /* Tombol menempel di kiri */
+  padding: 0.5rem 1.5rem;
+  border: none;
+  font-weight: bold;
+  color: var(--text-on-primary);
+  width: 20%;
+}
+
+
+/* --- VARIASI WARNA BERDASARKAN TEMA --- */
+
+/* Tema 'beasiswa' (Biru/Ungu) */
+.date-section.beasiswa { background-color: var(--color-primary-beasiswa); }
+.tag.beasiswa { background-color: var(--color-primary-beasiswa); }
+.btn-card.beasiswa { background-color: var(--color-primary-beasiswa); }
+
+/* Tema 'perlombaan' (Hijau) */
+.date-section.perlombaan { background-color: var(--color-primary-perlombaan); }
+.tag.perlombaan { background-color: var(--color-primary-perlombaan); }
+.btn-card.perlombaan { background-color: var(--color-primary-perlombaan); }
+
+/* Tema 'accent' (Oranye) */
+.date-section.accent { background-color: var(--color-accent); }
+.tag.accent { background-color: var(--color-accent); }
+.btn-card.accent { background-color: var(--color-accent); }
+
+/* ============================================= */
+/*  STYLING UNTUK CARD PERLOMBAAN                */
+/* ============================================= */
+
+/* src/components/PerlombaanList/PerlombaanList.css */
+.perlombaan-list-container {
+  display: grid;
+  /* Membuat 1 kolom saja untuk layout ini */
+  grid-template-columns: 1fr;
+  gap: 1.5rem; /* Jarak antar kartu */
+  padding: 3rem 0;
+  width: 70%;
+  margin: 0 auto;
+
+}
 
 /* ============================================= */
 /*  STYLING UNTUK FOOTER                */
