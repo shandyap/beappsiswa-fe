@@ -1,8 +1,20 @@
+import React from 'react';
+import HeroSection from '../components/HeroSectionComponents'; // Sesuaikan path
+import PerlombaanList from '../components/PerlombaanList';
 
-function Perlombaan() {
+const Perlombaan = () => {
   return (
-    <div>Perlombaan</div>
-  )
-}
+    <div>
+      <HeroSection 
+        variant="perlombaan"
+        title="Kembangkan Potensimu"
+        highlightedText="Potensimu"
+        subtitle="Temukan berbagai perlombaan menarik untuk mengasah kemampuan dan meraih prestasi"
+        placeholderText="Cari perlombaan"
+      />
+      <PerlombaanList/>
+    </div>
+  );
+};
 
-export default Perlombaan
+export default Perlombaan;
