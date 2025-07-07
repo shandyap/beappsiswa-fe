@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 import SearchBar from './SearchBar'; // Import komponen SearchBar
 
 
-const HeroSection = ({ variant, title, highlightedText, subtitle, placeholderText }) => {
+const PagesHeroSection = ({ variant, title, highlightedText, subtitle, placeholderText }) => {
   
   // Memisahkan judul untuk memberi style pada kata yang di-highlight
   const titleParts = title.split(highlightedText);
@@ -38,4 +38,4 @@ const HeroSection = ({ variant, title, highlightedText, subtitle, placeholderTex
   );
 };
 
-export default HeroSection;
+export default PagesHeroSection;

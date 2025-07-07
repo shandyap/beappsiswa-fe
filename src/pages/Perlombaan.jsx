@@ -1,11 +1,12 @@
 import React from 'react';
-import HeroSection from '../components/HeroSectionComponents'; // Sesuaikan path
-import PerlombaanList from '../components/PerlombaanList';
+import PagesHeroSection from '../components/PagesHeroSection'; // Sesuaikan path
+import PerlombaanList from '../components/perlombaan/PerlombaanList'; // Sesuaikan path
+
 
 const Perlombaan = () => {
   return (
     <div>
-      <HeroSection 
+      <PagesHeroSection 
         variant="perlombaan"
         title="Kembangkan Potensimu"
         highlightedText="Potensimu"

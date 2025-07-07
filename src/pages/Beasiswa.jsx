@@ -1,12 +1,12 @@
 import React from 'react';
-import HeroSection from '../components/HeroSectionComponents'; // Sesuaikan path
+import PagesHeroSection from '../components/PagesHeroSection'; // Sesuaikan path
 import { Container, Nav } from 'react-bootstrap';
-import BeasiswaListComponents from '../components/BeasiswaListComponent'; // Sesuaikan path
+import BeasiswaListComponents from '../components/beasiswa/BeasiswaList'; // Sesuaikan path
 
 const Beasiswa = () => {
   return (
     <div>
-      <HeroSection 
+      <PagesHeroSection 
         variant="beasiswa"
         title="Temukan Beasiswa Impianmu"
         highlightedText="Beasiswa"

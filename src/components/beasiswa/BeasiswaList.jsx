@@ -1,6 +1,6 @@
 // src/components/BeasiswaList/BeasiswaList.jsx
 import React from 'react';
-import BeasiswaCardComponents from '../components/BeasiswaCardComponents';
+import BeasiswaCardComponents from './BeasiswaCard';
 
 // Contoh data dummy. Nanti ini bisa diganti dengan data dari API.
 const dummyData = [
