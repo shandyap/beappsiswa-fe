@@ -5,16 +5,10 @@ import { Container } from 'react-bootstrap';
 import SearchBar from './SearchBar'; // Import komponen SearchBar
 
 
-const PagesHeroSection = ({ variant, title, highlightedText, subtitle, placeholderText }) => {
+const PagesHeroSection = ({ variant, title, highlightedText, subtitle, placeholderText, onSearch }) => {
   
   // Memisahkan judul untuk memberi style pada kata yang di-highlight
   const titleParts = title.split(highlightedText);
-
-  // Fungsi untuk menangani pencarian dari komponen SearchBar
-  const handleSearch = (searchQuery) => {
-    console.log(`Pencarian dimulai di section ${variant} untuk:`, searchQuery);
-    // Logika pencarian data akan ditambahkan di sini nanti
-  };
 
   return (
     // className akan menjadi 'hero-section beasiswa' atau 'hero-section perlombaan'
@@ -30,7 +24,7 @@ const PagesHeroSection = ({ variant, title, highlightedText, subtitle, placehold
 
           <SearchBar 
             placeholderText={placeholderText}
-            onSearch={handleSearch}
+            onSearch={onSearch}
           />
         </div>
       </Container>
