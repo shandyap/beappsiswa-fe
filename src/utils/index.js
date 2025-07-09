@@ -4,6 +4,7 @@
     return new Date(dateString).toLocaleDateString('id-ID', options);
   };
 
+  
     const formatDateLomba = (dateString) => {
     if (!dateString) return { day: 'N/A', monthYear: '' };
     const date = new Date(dateString);
@@ -15,4 +16,13 @@
     return { day, monthYear };
   };
 
-export { formatDate, formatDateLomba };
+  /**
+ * Fungsi untuk memformat tanggal dari format ISO (2025-03-31T...) menjadi "31 Maret 2025"
+ */
+const formatDateDetailHero = (dateString) => {
+  if (!dateString) return 'N/A';
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  return new Date(dateString).toLocaleDateString('id-ID', options);
+};
+
+export { formatDate, formatDateLomba, formatDateDetailHero };

@@ -77,7 +77,7 @@
   border: none;
   font-weight: bold;
   color: var(--text-on-primary);
-  width: 20%;
+  width: auto;
 }
 
 

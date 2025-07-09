@@ -1,5 +1,3 @@
-// src/components/HeroSection/HeroSection.jsx
-
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import SearchBar from './SearchBar'; // Import komponen SearchBar
