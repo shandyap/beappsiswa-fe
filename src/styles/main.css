@@ -24,6 +24,7 @@
   --color-primary-beasiswa: var(--raw-color-purple); /* Dipilih ungu agar lebih kontras */
   --color-primary-perlombaan: var(--raw-color-green-bright);
   --color-hero-gradient: linear-gradient(to bottom right, var(--raw-color-blue), var(--raw-color-purple));
+  --color-hero-gradient-perlombaan: linear-gradient(to bottom right, var(--raw-color-green-bright), var(--raw-color-green-muted));
 
   --color-accent: var(--raw-color-orange);
   --color-accent-hover: var(--raw-color-orange-dark);
@@ -201,234 +202,207 @@
 
 
 /* ============================================= */
-/*  STYLING UNTUK Card Beasiswa                */
+/*  STYLING UNTUK DETAIL HERO SECTION                */
 /* ============================================= */
 
-/* Style dasar untuk semua kartu */
-.card-beasiswa {
-  background-color: var(--bg-card);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border-top: 4px solid transparent; /* Border awal transparan */
-  display: flex;
-  flex-direction: column;
+
+/* Styling untuk Detail Hero Section */
+.hero-detail {
+  padding: 60px 0;
+  color: white;
+  overflow: hidden;
 }
 
-.card-beasiswa:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+/* Warna latar belakang berdasarkan variant */
+.hero-detail.beasiswa {
+  background: var(--color-hero-gradient); /* Warna ungu dari gambar */
 }
 
-.card-header {
+.hero-detail.perlombaan {
+  background: var(--color-primary-perlombaan); /* Warna hijau dari gambar */
+}
+
+.hero-detail-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  margin-bottom: 1rem;
-}
-
-.tag {
-  color: var(--text-on-primary);
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-.tags-container {
-  display: flex;
-  gap: 0.5rem; /* Memberi jarak 8px antar tag */
-}
-
-.deadline {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.card-title {
-  color: var(--text-primary);
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.card-description {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  flex-grow: 1; /* Membuat deskripsi mengisi ruang agar tombol selalu di bawah */
-  margin-bottom: 1.5rem;
-}
-
-.btn-card {
-  width: 100%;
-  padding: 0.75rem;
-  border: none;
-  font-weight: bold;
-  color: var(--text-on-primary);
-}
-
-/* --- VARIASI WARNA BERDASARKAN TEMA --- */
-
-/* Tema 'beasiswa' (Biru/Ungu) */
-.card-beasiswa.beasiswa { border-top-color: var(--color-primary-beasiswa); }
-.tag.beasiswa { background-color: var(--color-primary-beasiswa); }
-.btn-card.beasiswa { background-color: var(--color-primary-beasiswa); }
-.btn-card.beasiswa:hover {
-  background-color: var(--btn-color-beasiswa-hover);
-}
-.btn-card.beasiswa:active {
-  background-color: var(--btn-color-beasiswa-active);
-}
-/* Tema 'perlombaan' (Hijau) */
-.card-beasiswa.perlombaan { border-top-color: var(--color-primary-perlombaan); }
-.tag.perlombaan { background-color: var(--color-primary-perlombaan); }
-.btn-card.perlombaan { background-color: var(--color-primary-perlombaan); }
-.btn-card.perlombaan:hover{
-  background-color: var(--btn-color-perlombaan-hover);
-}
-.btn-card.perlombaan:active {
-  background-color: var(--btn-color-perlombaan-active);
-}
-
-/* Tema 'accent' (Oranye) */
-.card-beasiswa.accent { border-top-color: var(--color-accent); }
-.tag.accent { background-color: var(--color-accent); }
-.btn-card.accent { background-color: var(--color-accent); }
-.btn-card.accent:hover {
-  background-color: var(--color-accent-hover); /* Oranye lebih gelap saat hover */
-}
-.btn-card.accent:active {
-  background-color: #b45309;
-}
-
-
-/* ============================================= */
-/*  STYLING UNTUK LIST BEASISWA                */
-/* ============================================= */
-
-/* src/components/BeasiswaList/BeasiswaList.css */
-.beasiswa-list-container {
-  display: grid;
-  /* Membuat 2 kolom di desktop, dan 1 kolom di mobile */
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 2rem; /* Jarak antar kartu */
-  padding: 3rem 0; /* Beri ruang atas dan bawah untuk section */
-}
-
-
-/* ============================================= */
-/*  STYLING UNTUK CARD PERLOMBAAN                */
-/* ============================================= */
-
-/* src/components/PerlombaanCard/PerlombaanCard.css */
-
-/* Layout utama kartu menggunakan Flexbox */
-.card-lomba {
-  display: flex;
-  background-color: var(--bg-card);
-  border-radius: 12px;
-  overflow: hidden; /* Penting agar border-radius berfungsi di anak elemen */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 10px;
   
 }
 
+.hero-detail .info-section {
+  flex: 0.9 ;
+}
 
-/* Sisi Kiri (Tanggal) */
-.date-section {
-  padding: 1.5rem;
-  color: var(--text-on-primary);
+.hero-detail-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-detail-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px; /* Batasi lebar deskripsi */
+  margin-bottom: 2rem;
+}
+
+.hero-detail-tags {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 150px; /* Lebar minimum untuk bagian tanggal */
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.date-section .day {
-  font-size: 2.5rem;
-  font-weight: 800;
-  line-height: 1;
+.hero-detail-content .hero-detail-tags.beasiswa .tag {
+  color: var(--raw-color-purple);
+  background-color: var(--raw-color-white);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
-
-.date-section .month-year {
-  font-size: 1rem;
+.hero-detail-content .hero-detail-tags.perlombaan .tag {
+  color: var(--raw-color-green-muted);
+  background-color: var(--raw-color-white);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
-/* Sisi Kanan (Info) */
-.info-section {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Mengisi sisa ruang */
+.hero-detail .icon-section {
+  flex-shrink: 0;
 }
 
-.info-section .tag {
-  align-self: flex-start; /* Tag menempel di kiri */
-  color: var(--text-on-primary);
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-bottom: 1.4rem;
+.hero-detail-icon {
+  width: 150px;
+  height: 150px;
 }
 
-.info-section .card-title {
-  color: var(--text-primary);
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.8rem;
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+  .hero-detail-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-detail-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-detail-tags {
+    justify-content: center;
+  }
+  .icon-section {
+    margin-top: 2rem;
+  }
 }
 
-.info-section .card-description {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  flex-grow: 1; /* Mendorong tombol ke bawah */
-  margin-bottom: 1.9rem;
+/* ============================================= */
+/*  STYLING UNTUK TAB CONTENT                */
+/* ============================================= */
+
+/* Styling untuk Sistem Tab */
+.tab-header {
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 2rem;
 }
 
-.info-section .btn-card {
-  align-self: flex-start; /* Tombol menempel di kiri */
-  padding: 0.5rem 1.5rem;
+.tab-button {
+  padding: 10px 20px;
   border: none;
-  font-weight: bold;
-  color: var(--text-on-primary);
-  width: 20%;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #6c757d;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
+.tab-button.active {
+  color: #5d5fef; /* Warna utama beasiswa */
+}
 
-/* --- VARIASI WARNA BERDASARKAN TEMA --- */
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #5d5fef;
+}
 
-/* Tema 'beasiswa' (Biru/Ungu) */
-.date-section.beasiswa { background-color: var(--color-primary-beasiswa); }
-.tag.beasiswa { background-color: var(--color-primary-beasiswa); }
-.btn-card.beasiswa { background-color: var(--color-primary-beasiswa); }
+/* Styling untuk konten di dalam tab */
+.detail-section {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
 
-/* Tema 'perlombaan' (Hijau) */
-.date-section.perlombaan { background-color: var(--color-primary-perlombaan); }
-.tag.perlombaan { background-color: var(--color-primary-perlombaan); }
-.btn-card.perlombaan { background-color: var(--color-primary-perlombaan); }
+.detail-section h2 {
+  margin-bottom: 1.5rem;
+}
 
-/* Tema 'accent' (Oranye) */
-.date-section.accent { background-color: var(--color-accent); }
-.tag.accent { background-color: var(--color-accent); }
-.btn-card.accent { background-color: var(--color-accent); }
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
 
-/* ============================================= */
-/*  STYLING UNTUK CARD PERLOMBAAN                */
-/* ============================================= */
-
-/* src/components/PerlombaanList/PerlombaanList.css */
-.perlombaan-list-container {
+.grid-container {
   display: grid;
-  /* Membuat 1 kolom saja untuk layout ini */
-  grid-template-columns: 1fr;
-  gap: 1.5rem; /* Jarak antar kartu */
-  padding: 3rem 0;
-  width: 70%;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
 
+.grid-item {
+  background-color: #eafaf1; /* Warna hijau muda */
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* ============================================= */
+/*  STYLING UNTUK CTA & FOOTER CONTENT                */
+/* ============================================= */
+
+.cta-card {
+  background: var(--color-hero-gradient);
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+.cta-content h3 {
+  margin-bottom: 1rem;
+}
+.cta-content p {
+  margin: 0;
+  line-height: 1.5;
+}
+.cta-link { /* Untuk link email */
+  color: white;
+  text-decoration: underline;
+}
+.footer-contact-bar {
+  background: var(--color-hero-gradient);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem; /* Jarak dari CtaCard */
+}
+.footer-contact-link {
+  color: white;
+  font-weight: 500;
 }
 
 /* ============================================= */
@@ -448,3 +422,5 @@
   margin-bottom: 0; 
   font-size: 0.9rem;
 }
+
+

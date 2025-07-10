@@ -1,0 +1,115 @@
+
+/* ============================================= */
+/*  STYLING UNTUK CARD PERLOMBAAN                */
+/* ============================================= */
+
+/* src/components/PerlombaanCard/PerlombaanCard.css */
+
+/* Layout utama kartu menggunakan Flexbox */
+.card-lomba {
+  display: flex;
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden; /* Penting agar border-radius berfungsi di anak elemen */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+}
+
+
+/* Sisi Kiri (Tanggal) */
+.date-section {
+  padding: 1.5rem;
+  color: var(--text-on-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px; /* Lebar minimum untuk bagian tanggal */
+}
+
+.date-section .day {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.date-section .month-year {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Sisi Kanan (Info) */
+.info-section {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Mengisi sisa ruang */
+}
+
+.info-section .tag {
+  align-self: flex-start; /* Tag menempel di kiri */
+  color: var(--text-on-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 1.4rem;
+}
+
+.info-section .card-title {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.info-section .card-description {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  flex-grow: 1; /* Mendorong tombol ke bawah */
+  margin-bottom: 1.9rem;
+}
+
+.info-section .btn-card {
+  align-self: flex-start; /* Tombol menempel di kiri */
+  padding: 0.5rem 1.5rem;
+  border: none;
+  font-weight: bold;
+  color: var(--text-on-primary);
+  width: auto;
+}
+
+
+/* --- VARIASI WARNA BERDASARKAN TEMA --- */
+
+/* Tema 'beasiswa' (Biru/Ungu) */
+.date-section.beasiswa { background-color: var(--color-primary-beasiswa); }
+.tag.beasiswa { background-color: var(--color-primary-beasiswa); }
+.btn-card.beasiswa { background-color: var(--color-primary-beasiswa); }
+
+/* Tema 'perlombaan' (Hijau) */
+.date-section.perlombaan { background-color: var(--color-primary-perlombaan); }
+.tag.perlombaan { background-color: var(--color-primary-perlombaan); }
+.btn-card.perlombaan { background-color: var(--color-primary-perlombaan); }
+
+/* Tema 'accent' (Oranye) */
+.date-section.accent { background-color: var(--color-accent); }
+.tag.accent { background-color: var(--color-accent); }
+.btn-card.accent { background-color: var(--color-accent); }
+
+/* ============================================= */
+/*  STYLING UNTUK CARD PERLOMBAAN                */
+/* ============================================= */
+
+/* src/components/PerlombaanList/PerlombaanList.css */
+.perlombaan-list-container {
+  display: grid;
+  /* Membuat 1 kolom saja untuk layout ini */
+  grid-template-columns: 1fr;
+  gap: 1.5rem; /* Jarak antar kartu */
+  padding: 3rem 0;
+  width: 70%;
+  margin: 0 auto;
+
+}

@@ -4,6 +4,8 @@ import Beasiswa from './pages/Beasiswa';
 import Perlombaan from './pages/Perlombaan';
 import NavbarComponent from './components/NavbarComponent';
 import FooterComponent from './components/FooterComponent';
+import DetailBeasiswa from './pages/DetailBeasiswa'; 
+import DetailPerlombaan from './pages/DetailPerlombaan';
 
 function App() {
 
@@ -14,6 +16,9 @@ function App() {
         <Route path='/' element={<Beranda/>} />
         <Route path='/Beasiswa' element={<Beasiswa/>} />
         <Route path='/Perlombaan' element={<Perlombaan/>} />
+        <Route path='/beasiswa/:id' element={<DetailBeasiswa/>} />
+        <Route path='/lomba/:id' element={<DetailPerlombaan/>} />
+        {/* Tambahkan route lain sesuai kebutuhan */}
       </Routes>
       <FooterComponent/>
 

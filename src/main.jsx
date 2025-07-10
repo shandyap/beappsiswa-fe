@@ -5,6 +5,8 @@ import { BrowserRouter } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.css';
+import './components/beasiswa/beasiswa.css';
+import './components/perlombaan/perlombaan.css';
 
 
 createRoot(document.getElementById('root')).render(
