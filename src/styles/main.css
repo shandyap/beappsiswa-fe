@@ -77,7 +77,7 @@
   font-weight: 500;
   color: var(--text-secondary);
   padding-bottom: 0.5rem;
-  margin-left: 1rem; /* Jarak antar link */
+  margin-left: 1rem; 
 
   /* Trik agar layout tidak "lompat" saat border muncul di hover/active */
   border-bottom: 2px solid transparent; 
@@ -107,7 +107,6 @@
 /*  STYLING UNTUK SEARCHBAR              */
 /* ============================================= */
 
-/* src/components/SearchBar/SearchBar.css */
 
 .search-bar-container {
   display: flex;
@@ -115,12 +114,12 @@
   border-radius: 12px;
   padding: 0.5rem;
   max-width: 80%;
-  margin: 0 auto; /* Tengah */
+  margin: 0 auto;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .search-input {
-  flex-grow: 1; /* Input akan mengisi ruang yang tersedia */
+  flex-grow: 1;
   border: none;
   outline: none;
   background-color: transparent;
@@ -145,7 +144,7 @@
   --bs-btn-active-border-color: #b45309;
 
   /* Menghilangkan 'glow' biru bawaan bootstrap saat tombol di-fokus */
-  --bs-btn-focus-shadow-rgb: 245, 158, 11; /* RGB dari warna oranye kita */
+  --bs-btn-focus-shadow-rgb: 245, 158, 11; 
   
   /* Styling tambahan */
   font-weight: bold;
@@ -159,15 +158,15 @@
 
 /* Style dasar yang berlaku untuk semua variant hero section */
 .hero-section {
-  padding: 6rem 1.5rem; /* Memberi ruang atas-bawah yang cukup */
+  padding: 6rem 1.5rem; 
   text-align: center;
-  color: var(--text-on-dark); /* Warna teks putih dari variabel global */
+  color: var(--text-on-dark);
   
 }
 
 /* Variant untuk Halaman Beasiswa */
 .hero-section.beasiswa {
-  background: var(--color-hero-gradient); /* Menggunakan gradasi diagonal */
+  background: var(--color-hero-gradient); 
   width: 100%;
 }
 
@@ -180,7 +179,7 @@
 /* Wadah untuk konten agar mudah diatur posisinya */
 .hero-content {
   max-width: 80%px;
-  margin: 0 auto; /* Otomatis berada di tengah secara horizontal */
+  margin: 0 auto; 
 }
 
 .hero-section h1 {
@@ -197,7 +196,7 @@
 .hero-section p {
   font-size: 1.125rem;
   opacity: 0.9;
-  margin-bottom: 2.5rem; /* Jarak ke search bar */
+  margin-bottom: 2.5rem; 
 }
 
 
@@ -215,11 +214,11 @@
 
 /* Warna latar belakang berdasarkan variant */
 .hero-detail.beasiswa {
-  background: var(--color-hero-gradient); /* Warna ungu dari gambar */
+  background: var(--color-hero-gradient); 
 }
 
 .hero-detail.perlombaan {
-  background: var(--color-primary-perlombaan); /* Warna hijau dari gambar */
+  background: var(--color-primary-perlombaan);
 }
 
 .hero-detail-content {
@@ -243,7 +242,7 @@
 .hero-detail-description {
   font-size: 1.1rem;
   line-height: 1.6;
-  max-width: 600px; /* Batasi lebar deskripsi */
+  max-width: 600px; 
   margin-bottom: 2rem;
 }
 
@@ -279,34 +278,13 @@
   height: 150px;
 }
 
-/* Responsive untuk layar kecil */
-@media (max-width: 768px) {
-  .hero-detail-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-detail-description {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-detail-tags {
-    justify-content: center;
-  }
-  .icon-section {
-    margin-top: 2rem;
-  }
-}
 
 /* ============================================= */
 /*  STYLING UNTUK TAB CONTENT                */
 /* ============================================= */
 
 /* Styling untuk Sistem Tab */
-.tab-header {
-  border-bottom: 2px solid #e0e0e0;
-  margin-bottom: 2rem;
-}
-
+/* Styling Tombol Tab Default */
 .tab-button {
   padding: 10px 20px;
   border: none;
@@ -319,18 +297,41 @@
   transition: color 0.3s ease;
 }
 
-.tab-button.active {
-  color: #5d5fef; /* Warna utama beasiswa */
+/* --- Styling untuk Varian BEASISWA (Ungu) --- */
+.tab-system.beasiswa .tab-button.active {
+  color: #5d5fef; /* Warna Ungu */
 }
 
-.tab-button.active::after {
+.tab-system.beasiswa .tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Disesuaikan dengan border-bottom .tab-header */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #5d5fef; /* Warna Ungu */
+}
+
+
+/* --- Styling untuk Varian PERLOMBAAN (Hijau) --- */
+.tab-system.perlombaan .tab-button.active {
+  color: #2ECC71; /* Warna Hijau */
+}
+
+.tab-system.perlombaan .tab-button.active::after {
   content: '';
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #5d5fef;
+  background-color: #2ECC71; 
+}
+
+/* Border bawah untuk header tab */
+.tab-header {
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 2rem;
 }
 
 /* Styling untuk konten di dalam tab */
@@ -361,7 +362,7 @@
 }
 
 .grid-item {
-  background-color: #eafaf1; /* Warna hijau muda */
+  background-color: #eafaf1; 
   padding: 1.5rem;
   border-radius: 8px;
 }
@@ -388,7 +389,7 @@
   margin: 0;
   line-height: 1.5;
 }
-.cta-link { /* Untuk link email */
+.cta-link { 
   color: white;
   text-decoration: underline;
 }
@@ -398,7 +399,7 @@
   text-align: center;
   padding: 1rem;
   border-radius: 8px;
-  margin-top: 1rem; /* Jarak dari CtaCard */
+  margin-top: 1rem; 
 }
 .footer-contact-link {
   color: white;
@@ -413,7 +414,7 @@
   color: var(--text-on-dark);
   padding: 1.5rem 0;
   
-  /* Memastikan footer menempel di bagian bawah halaman */
+  
   margin-top: auto; 
 }
 
@@ -424,3 +425,25 @@
 }
 
 
+
+/* ============================================= */
+/*  STYLING UNTUK RESPONSIVE                */
+/* ============================================= */
+
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+  .hero-detail-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-detail-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-detail-tags {
+    justify-content: center;
+  }
+  .icon-section {
+    margin-top: 2rem;
+  }
+}

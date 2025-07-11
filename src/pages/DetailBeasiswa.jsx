@@ -27,7 +27,7 @@ const DetailBeasiswa = () => {
     fetchDetail();
   }, [id]);
 
-    const tabs = [
+  const tabs = [
     {
       id: 'informasi',
       label: 'Informasi',
@@ -46,7 +46,7 @@ const DetailBeasiswa = () => {
     <div>
       <DetailHeroSection variant="beasiswa" data={beasiswa} />
       <div className="container my-5">
-        <TabNavigation tabs={tabs} />
+        <TabNavigation tabs={tabs} variant="beasiswa"/>
       </div>
     </div>
   );

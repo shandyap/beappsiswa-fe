@@ -8,7 +8,7 @@ const FooterContactBar = ({ kontak }) => {
       Untuk informasi lebih lanjut, hubungi: 
       <a href={`mailto:${kontak.email}`} className="footer-contact-link">{kontak.email}</a>
       {' | '}
-      Telp: {kontak.telepon}
+      Telp: {kontak.whatsapp}
     </div>
   );
 };
