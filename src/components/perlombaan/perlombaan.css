@@ -3,14 +3,12 @@
 /*  STYLING UNTUK CARD PERLOMBAAN                */
 /* ============================================= */
 
-/* src/components/PerlombaanCard/PerlombaanCard.css */
-
 /* Layout utama kartu menggunakan Flexbox */
 .card-lomba {
   display: flex;
   background-color: var(--bg-card);
   border-radius: 12px;
-  overflow: hidden; /* Penting agar border-radius berfungsi di anak elemen */
+  overflow: hidden; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   
@@ -25,7 +23,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 150px; /* Lebar minimum untuk bagian tanggal */
+  min-width: 150px; 
 }
 
 .date-section .day {
@@ -44,11 +42,11 @@
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Mengisi sisa ruang */
+  flex-grow: 1;
 }
 
 .info-section .tag {
-  align-self: flex-start; /* Tag menempel di kiri */
+  align-self: flex-start; 
   color: var(--text-on-primary);
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
@@ -67,12 +65,12 @@
 .info-section .card-description {
   color: var(--text-secondary);
   font-size: 1rem;
-  flex-grow: 1; /* Mendorong tombol ke bawah */
+  flex-grow: 1; 
   margin-bottom: 1.9rem;
 }
 
 .info-section .btn-card {
-  align-self: flex-start; /* Tombol menempel di kiri */
+  align-self: flex-start; 
   padding: 0.5rem 1.5rem;
   border: none;
   font-weight: bold;
@@ -102,14 +100,160 @@
 /*  STYLING UNTUK CARD PERLOMBAAN                */
 /* ============================================= */
 
-/* src/components/PerlombaanList/PerlombaanList.css */
 .perlombaan-list-container {
   display: grid;
   /* Membuat 1 kolom saja untuk layout ini */
   grid-template-columns: 1fr;
-  gap: 1.5rem; /* Jarak antar kartu */
+  gap: 1.5rem; 
   padding: 3rem 0;
   width: 70%;
   margin: 0 auto;
 
+}
+
+
+/* ============================================= */
+/*  STYLING UNTUK TAB INRORMASI PERLOMBAAN                 */
+/* ============================================= */
+
+/* --- Kartu Section Utama --- */
+.detail-section {
+  background-color: #FFFFFF;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.detail-section h2 {
+  color: #34495E;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+/* --- Box Info di Dalam Kartu --- */
+.info-box {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  color: #34495E;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-box ul li {
+  margin-bottom: 0.5rem;
+}
+
+.info-box p {
+  margin: 0;
+}
+
+/* --- Varian Warna Box Info --- */
+.info-box.green {
+  background-color: #EAF7EE; 
+}
+
+.info-box.purple {
+  background-color: #F4ECF7;
+}
+
+.info-box.orange {
+  background-color: #FEF5E7; 
+}
+
+
+/* --- Layout Grid untuk 3 Kolom --- */
+.detail-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.detail-grid-3 .info-box {
+  padding: 1.5rem;
+}
+
+.detail-grid-3 .info-box strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.detail-grid-3 .info-box p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* --- Checklist Item (untuk Lokasi) --- */
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.checklist-icon {
+  font-size: 1.2rem;
+}
+
+/* Styling untuk daftar timeline */
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+.timeline-item span {
+  color: #555;
+}
+
+.timeline-item strong {
+  font-weight: 600;
+}
+
+/* Styling untuk bagian Media Promosi */
+.media-links-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.media-link-card {
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #34495E;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.media-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #ced4da;
 }

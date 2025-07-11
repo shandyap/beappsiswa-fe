@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const TabNavigation = ({ tabs }) => {
+
+const TabNavigation = ({ tabs, variant }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   const activeContent = tabs.find(tab => tab.id === activeTab)?.content;
 
   return (
-    <div className="tab-system">
+    
+    <div className={`tab-system ${variant}`}>
       <div className="tab-header">
         {tabs.map(tab => (
           <button
@@ -23,6 +26,15 @@ const TabNavigation = ({ tabs }) => {
       </div>
     </div>
   );
+};
+
+TabNavigation.propTypes = {
+  tabs: PropTypes.array.isRequired,
+  variant: PropTypes.oneOf(['beasiswa', 'perlombaan']),
+};
+
+TabNavigation.defaultProps = {
+  variant: 'beasiswa', 
 };
 
 export default TabNavigation;

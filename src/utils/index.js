@@ -25,4 +25,51 @@ const formatDateDetailHero = (dateString) => {
   return new Date(dateString).toLocaleDateString('id-ID', options);
 };
 
-export { formatDate, formatDateLomba, formatDateDetailHero };
+// Fungsi helper untuk memformat mata uang
+const formatCurrency = (amount) => {
+  if (typeof amount !== 'number') return amount;
+  return new Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR',
+    minimumFractionDigits: 0,
+  }).format(amount);
+};
+
+const formatDateRange = (rangeString) => {
+  // 1. Periksa jika input tidak valid atau bukan rentang
+  if (!rangeString || !rangeString.includes(' - ')) {
+    return rangeString; // Kembalikan nilai asli jika tidak sesuai format
+  }
+
+  // 2. Pecah string menjadi tanggal mulai dan selesai
+  const parts = rangeString.split(' - ');
+  const startDate = new Date(parts[0]);
+  const endDate = new Date(parts[1]);
+
+  // Opsi format tanggal
+  const optionsFull = { day: 'numeric', month: 'long', year: 'numeric' };
+  const optionsDayOnly = { day: 'numeric' };
+
+  // 3. Periksa apakah tanggal berada di bulan dan tahun yang sama
+  if (
+    startDate.getMonth() === endDate.getMonth() &&
+    startDate.getFullYear() === endDate.getFullYear()
+  ) {
+    // Jika ya, format menjadi "16 - 20 Agustus 2025"
+    const startDay = startDate.toLocaleDateString('id-ID', optionsDayOnly);
+    const endFull = endDate.toLocaleDateString('id-ID', optionsFull);
+    return `${startDay} - ${endFull}`;
+  } else {
+    // Jika tidak, format kedua tanggal secara penuh
+    const startFull = startDate.toLocaleDateString('id-ID', optionsFull);
+    const endFull = endDate.toLocaleDateString('id-ID', optionsFull);
+    return `${startFull} - ${endFull}`;
+  }
+};
+
+export { 
+  formatDate, 
+  formatDateLomba, 
+  formatDateDetailHero, 
+  formatCurrency,
+  formatDateRange };
