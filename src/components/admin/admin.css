@@ -1,0 +1,238 @@
+
+.login-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f9fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-card {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 450px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2C3E50;
+  margin: 0;
+}
+
+.login-header p {
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.input-group-custom {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 15px 12px 45px; /* Padding kiri untuk ikon */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #5d5fef; /* Warna ungu saat focus */
+  box-shadow: 0 0 0 2px rgba(93, 95, 239, 0.2);
+}
+
+
+.password-toggle-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  cursor: pointer;
+}
+
+
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #5d5fef;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+  background-color: #4a4cc7;
+}
+
+
+
+/* ============================================= */
+/*  STYLING UNTUK HEADER ADMIN DASHBOARD                */
+/* ============================================= */
+.dashboard-header {
+  background-color: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header-text h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #2C3E50;
+}
+
+.header-text p {
+  margin: 0;
+  margin-top: 0.25rem;
+  color: #888;
+}
+
+/* Penyesuaian untuk tombol di React Bootstrap */
+.header-action .btn-outline-danger {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+
+
+/* ============================================= */
+/*  STYLING UNTUK HEADER ADMIN DASHBOARD                */
+/* ============================================= */
+.quick-actions-section {
+  background-color: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.quick-actions-section h4 {
+  font-weight: 600;
+  color: #34495E;
+  margin-bottom: 1.5rem;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.action-card {
+  background-color: #f8f9fa;
+  border: none;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  color: #34495E;
+  transition: all 0.2s ease-in-out;
+}
+
+.action-card:hover:not(:disabled) {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.action-card:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.action-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1rem auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Varian Warna */
+.action-card.blue .action-icon { background-color: #a9c5ff; }
+.action-card.purple .action-icon { background-color: #d3b5ff; }
+.action-card.green .action-icon { background-color: #a8e6cf; }
+.action-card.yellow .action-icon { background-color: #ffecb3; }
+
+.action-card.blue { background-color: #f0f5ff; }
+.action-card.purple { background-color: #f7f0ff; }
+.action-card.green { background-color: #f1fcf7; }
+.action-card.yellow { background-color: #fffbeb; }
+
+
+
+
+/* ============================================= */
+/*  STYLING UNTUK TAB NAVIGATION ADMIN DASHBOARD                */
+/* ============================================= */
+.tab-button {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #6c757d;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* --- Styling untuk Varian BEASISWA (Ungu) --- */
+.tab-system.dashboard .tab-button.active {
+  color: #5d5fef; /* Warna Ungu */
+}
+
+.tab-system.dashboard .tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Disesuaikan dengan border-bottom .tab-header */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #5d5fef; /* Warna Ungu */
+}
+

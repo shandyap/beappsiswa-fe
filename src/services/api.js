@@ -21,6 +21,31 @@ export const getBeasiswaById = async (id) => {
   return data.data; 
 };
 
+export const addScholarship = async (scholarshipData) => {
+  const response = await fetch(`${BASE_URL}/beasiswa`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(scholarshipData),
+  });
+  return handleResponse(response);
+};
+
+export const updateScholarshipById = async (id, scholarshipData) => {
+  const response = await fetch(`${BASE_URL}/beasiswa/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(scholarshipData),
+  });
+  return handleResponse(response);
+};
+
+
+
+
 export const getAllLomba = async () => {
   const response = await fetch(`${BASE_URL}/lomba`);
   const data = await handleResponse(response);
@@ -32,4 +57,26 @@ export const getLombaById = async (id) => {
   const response = await fetch(`${BASE_URL}/lomba/${id}`);
   const data = await handleResponse(response);
   return data.data;
+};
+
+export const addCompetition = async (competitionData) => {
+  const response = await fetch(`${BASE_URL}/lomba`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(competitionData),
+  });
+  return handleResponse(response);
+};
+
+export const updateCompetitionById = async (id, competitionData) => {
+  const response = await fetch(`${BASE_URL}/lomba/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(competitionData),
+  });
+  return handleResponse(response);
 };
