@@ -34,7 +34,6 @@ const BeasiswaTable = ({scholarships, onEdit, onDelete}) => {
               <td><span className={`status-pill ${beasiswa.status}`}>{beasiswa.status}</span></td>
               <td>{beasiswa.jumlah_pendaftar}</td>
               <td className="action-buttons">
-                <Button variant="link" size="sm"><BsEye /></Button>
                 <Button variant="link" size="sm" onClick={() => onEdit(beasiswa)}>
                   <BsPencil />
                 </Button>

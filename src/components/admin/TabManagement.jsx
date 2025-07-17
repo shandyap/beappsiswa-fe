@@ -2,19 +2,31 @@ import {React, useState, useEffect} from 'react';
 import BeasiswaTable from './BeasiswaTable';
 import PerlombaanTable from './PerlombaanTable';
 import TabNavigation from '../TabNavigation';
-import { getAllBeasiswa, getAllLomba, deleteBeasiswaById } from '../../services/api';
+import { getAllBeasiswa, getAllLomba, deleteBeasiswaById, deleteLombaById } from '../../services/api';
 
-const TabManagement = ({refreshTrigger, onEditBeasiswa, onDataRefresh}) => {
+const TabManagement = ({refreshTrigger, onEditBeasiswa, onEditPerlombaan, onDataRefresh}) => {
 
   const [scholarshipData, setScholarshipData] = useState([]);
   const [competitionData, setCompetitionData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const handleDeleteBeasiswa = async (id) => {
-    if (window.confirm('Yakin ingin menghapus beasiswa ini?')) {
+    if (window.confirm('Yakin ingin menghapus Beasiswa ini?')) {
       try {
         await deleteBeasiswaById(id);
         alert('Beasiswa berhasil dihapus.');
+        onDataRefresh(); // Panggil fungsi refresh
+      } catch (error) {
+        alert('Gagal menghapus: ' + error.message);
+      }
+    }
+  };
+
+  const handleDeletePerlombaan = async (id) => {
+    if (window.confirm('Yakin ingin menghapus Lomba ini?')) {
+      try {
+        await deleteLombaById(id);
+        alert('Lomba berhasil dihapus.');
         onDataRefresh(); // Panggil fungsi refresh
       } catch (error) {
         alert('Gagal menghapus: ' + error.message);
@@ -54,7 +66,13 @@ const TabManagement = ({refreshTrigger, onEditBeasiswa, onDataRefresh}) => {
     {
       id: 'perlombaan',
       label: 'Perlombaan',
-      content: loading ? <p>Memuat...</p> : <PerlombaanTable competitions={competitionData} />
+      content: loading ? <p>Memuat...</p> : 
+      <PerlombaanTable 
+        competitions={competitionData}
+        onEdit={onEditPerlombaan}
+        onDelete={handleDeletePerlombaan}
+
+      />
     }
   ];
 

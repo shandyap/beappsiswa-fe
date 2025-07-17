@@ -3,7 +3,7 @@ import { getAllLomba } from '../../services/api.js'
 import { BsPencil, BsTrash, BsEye } from 'react-icons/bs';
 import { Button } from 'react-bootstrap';
 
-const PerlombaanTable = ({competitions}) => {
+const PerlombaanTable = ({competitions, onEdit, onDelete}) => {
 
   if (!competitions || competitions.length === 0) {
     return <p>Belum ada data Perlombaan.</p>;
@@ -35,9 +35,12 @@ const PerlombaanTable = ({competitions}) => {
               <td>{perlombaan.jenis_lomba}</td>
               <td>{perlombaan.jumlah_pendaftar}</td>
               <td className="action-buttons">
-                <Button variant="link" size="sm"><BsEye /></Button>
-                <Button variant="link" size="sm"><BsPencil /></Button>
-                <Button variant="link" size="sm" className="text-danger"><BsTrash /></Button>
+                <Button variant="link" size="sm" onClick={() => onEdit(perlombaan)}>
+                  <BsPencil />
+                </Button>
+                <Button variant="link" size="sm" className="text-danger" onClick={() => onDelete(perlombaan.id)}>
+                  <BsTrash />
+                </Button>
               </td>
             </tr>
           ))}
