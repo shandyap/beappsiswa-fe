@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { getAllBeasiswa } from '../../services/api.js'
 import { BsPencil, BsTrash, BsEye } from 'react-icons/bs';
 import { Button } from 'react-bootstrap';
 
-const BeasiswaTable = ({scholarships}) => {
+const BeasiswaTable = ({scholarships, onEdit, onDelete}) => {
 
   if (!scholarships || scholarships.length === 0) {
     return <p>Belum ada data Beasiswa.</p>;
@@ -36,8 +35,12 @@ const BeasiswaTable = ({scholarships}) => {
               <td>{beasiswa.jumlah_pendaftar}</td>
               <td className="action-buttons">
                 <Button variant="link" size="sm"><BsEye /></Button>
-                <Button variant="link" size="sm"><BsPencil /></Button>
-                <Button variant="link" size="sm" className="text-danger"><BsTrash /></Button>
+                <Button variant="link" size="sm" onClick={() => onEdit(beasiswa)}>
+                  <BsPencil />
+                </Button>
+                <Button variant="link" size="sm" className="text-danger" onClick={() => onDelete(beasiswa.id)}>
+                  <BsTrash />
+                </Button>
               </td>
             </tr>
           ))}

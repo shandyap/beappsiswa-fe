@@ -8,6 +8,7 @@ import { Tab } from 'react-bootstrap';
 import TabManagement from '../components/admin/TabManagement';
 import AddBeasiswaModal from '../components/admin/AddBeasiswaModal';
 import AddPerlombaanModal from '../components/admin/AddPerlombaanModal';
+import EditBeasiswaModal from '../components/admin/EditBeasiswaModal';
 
 const AdminDashboard = () => {
   const { logout } = useAuth();
@@ -18,13 +19,23 @@ const AdminDashboard = () => {
   const [showLombaModal, setShowLombaModal] = useState(false);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
 
+  const [showEditBeasiswaModal, setShowEditBeasiswaModal] = useState(false);
+  const [editingBeasiswa, setEditingBeasiswa] = useState(null);
+
+
   const handleSuccess = () => {
     // Menambah nilai state ini akan memicu useEffect di TabManagement
     setRefreshTrigger(currentValue => currentValue + 1);
   };
+  
   const handleLogout = () => {
     logout(); 
     navigate('/admin'); 
+  };
+
+  const handleOpenEditBeasiswa = (beasiswa) => {
+    setEditingBeasiswa(beasiswa);
+    setShowEditBeasiswaModal(true);
   };
 
 
@@ -37,7 +48,10 @@ const AdminDashboard = () => {
           onAddBeasiswaClick={() => setShowBeasiswaModal(true)}
           onAddLombaClick={() => setShowLombaModal(true)}
         />
-        <TabManagement refreshTrigger={refreshTrigger} />
+        <TabManagement 
+          refreshTrigger={refreshTrigger} 
+          onEditBeasiswa={handleOpenEditBeasiswa}
+          onDataRefresh={handleSuccess}/>
       </main>
 
         <AddBeasiswaModal 
@@ -49,6 +63,13 @@ const AdminDashboard = () => {
           show={showLombaModal} 
           onHide={() => setShowLombaModal(false)} 
           onSuccess={handleSuccess}
+        />
+
+        <EditBeasiswaModal 
+          show={showEditBeasiswaModal}
+          onHide={() => setShowEditBeasiswaModal(false)}
+          onSuccess={handleSuccess}
+          scholarshipData={editingBeasiswa}
         />
 
     </div>

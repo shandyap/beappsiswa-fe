@@ -43,6 +43,12 @@ export const updateScholarshipById = async (id, scholarshipData) => {
   return handleResponse(response);
 };
 
+export const deleteBeasiswaById = async (id) => {
+  const response = await fetch(`${BASE_URL}/beasiswa/${id}`, {
+    method: 'DELETE',
+  });
+  return handleResponse(response);
+};
 
 
 
@@ -80,3 +86,10 @@ export const updateCompetitionById = async (id, competitionData) => {
   });
   return handleResponse(response);
 };
+
+export const deleteLombaById = async (id) => {
+    const response = await fetch(`${BASE_URL}/lomba/${id}`, {
+        method: 'DELETE',
+    });
+    return handleResponse(response);
+}
