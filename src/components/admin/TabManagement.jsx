@@ -2,14 +2,38 @@ import {React, useState, useEffect} from 'react';
 import BeasiswaTable from './BeasiswaTable';
 import PerlombaanTable from './PerlombaanTable';
 import TabNavigation from '../TabNavigation';
-import { getAllBeasiswa, getAllLomba } from '../../services/api';
+import { getAllBeasiswa, getAllLomba, deleteBeasiswaById, deleteLombaById } from '../../services/api';
 
-const TabManagement = ({refreshTrigger}) => {
+const TabManagement = ({refreshTrigger, onEditBeasiswa, onEditPerlombaan, onDataRefresh}) => {
 
   const [scholarshipData, setScholarshipData] = useState([]);
   const [competitionData, setCompetitionData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const handleDeleteBeasiswa = async (id) => {
+    if (window.confirm('Yakin ingin menghapus Beasiswa ini?')) {
+      try {
+        await deleteBeasiswaById(id);
+        alert('Beasiswa berhasil dihapus.');
+        onDataRefresh(); // Panggil fungsi refresh
+      } catch (error) {
+        alert('Gagal menghapus: ' + error.message);
+      }
+    }
+  };
+
+  const handleDeletePerlombaan = async (id) => {
+    if (window.confirm('Yakin ingin menghapus Lomba ini?')) {
+      try {
+        await deleteLombaById(id);
+        alert('Lomba berhasil dihapus.');
+        onDataRefresh(); // Panggil fungsi refresh
+      } catch (error) {
+        alert('Gagal menghapus: ' + error.message);
+      }
+    }
+  };
+  
   // useEffect akan berjalan saat pertama kali dan setiap kali 'refreshTrigger' berubah
   useEffect(() => {
     const fetchAllData = async () => {
@@ -33,12 +57,22 @@ const TabManagement = ({refreshTrigger}) => {
     {
       id: 'beasiswa',
       label: 'Beasiswa',
-      content: loading ? <p>Memuat...</p> : <BeasiswaTable scholarships={scholarshipData} />
+      content: loading ? <p>Memuat...</p> : 
+        <BeasiswaTable 
+          scholarships={scholarshipData}
+          onEdit={onEditBeasiswa}
+          onDelete={handleDeleteBeasiswa} />
     },
     {
       id: 'perlombaan',
       label: 'Perlombaan',
-      content: loading ? <p>Memuat...</p> : <PerlombaanTable competitions={competitionData} />
+      content: loading ? <p>Memuat...</p> : 
+      <PerlombaanTable 
+        competitions={competitionData}
+        onEdit={onEditPerlombaan}
+        onDelete={handleDeletePerlombaan}
+
+      />
     }
   ];
 
