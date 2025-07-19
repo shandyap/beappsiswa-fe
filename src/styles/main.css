@@ -3,28 +3,37 @@
 /* ============================================= */
 
 * {
-    font-family: 'Inter', sans-serif;
-
+  font-family: "Inter", sans-serif;
 }
 :root {
   /* Palet Warna Mentah dari Figma */
-  --raw-color-blue: #4D57D6;
-  --raw-color-purple: #6551CF;
-  --raw-color-green-bright: #12B981;
-  --raw-color-green-muted: #4FB574;
-  --raw-color-orange: #F59E0C;
+  --raw-color-blue: #4d57d6;
+  --raw-color-purple: #6551cf;
+  --raw-color-green-bright: #12b981;
+  --raw-color-green-muted: #4fb574;
+  --raw-color-orange: #f59e0c;
   --raw-color-orange-dark: #d97706;
-  --raw-color-dark-navy: #1F2937;
-  --raw-color-gray: #8C929C;
+  --raw-color-dark-navy: #1f2937;
+  --raw-color-gray: #8c929c;
   --raw-color-white: #ffffff;
   --raw-color-light-gray: #f8fafc;
-  --raw-color-border: #F9FAFB;
+  --raw-color-border: #f9fafb;
 
   /* Variabel Semantik (Berdasarkan Penggunaan) */
-  --color-primary-beasiswa: var(--raw-color-purple); /* Dipilih ungu agar lebih kontras */
+  --color-primary-beasiswa: var(
+    --raw-color-purple
+  ); /* Dipilih ungu agar lebih kontras */
   --color-primary-perlombaan: var(--raw-color-green-bright);
-  --color-hero-gradient: linear-gradient(to bottom right, var(--raw-color-blue), var(--raw-color-purple));
-  --color-hero-gradient-perlombaan: linear-gradient(to bottom right, var(--raw-color-green-bright), var(--raw-color-green-muted));
+  --color-hero-gradient: linear-gradient(
+    to bottom right,
+    var(--raw-color-blue),
+    var(--raw-color-purple)
+  );
+  --color-hero-gradient-perlombaan: linear-gradient(
+    to bottom right,
+    var(--raw-color-green-bright),
+    var(--raw-color-green-muted)
+  );
 
   --color-accent: var(--raw-color-orange);
   --color-accent-hover: var(--raw-color-orange-dark);
@@ -41,13 +50,12 @@
 
   --border-color: var(--raw-color-border);
 
-  --btn-color-beasiswa-hover: #5743BA;
-  --btn-color-beasiswa-active: #4A389F;
+  --btn-color-beasiswa-hover: #5743ba;
+  --btn-color-beasiswa-active: #4a389f;
 
-  --btn-color-perlombaan-hover: #0FA172;
-  --btn-color-perlombaan-active: #0C8960;
+  --btn-color-perlombaan-hover: #0fa172;
+  --btn-color-perlombaan-active: #0c8960;
 }
-
 
 /* ============================================= */
 /*  STYLING UNTUK NAVBAR                */
@@ -69,7 +77,7 @@
 }
 
 .app-green {
-    color: var(--raw-color-green-bright)
+  color: var(--raw-color-green-bright);
 }
 
 /* Style dasar untuk semua link navigasi */
@@ -77,15 +85,13 @@
   font-weight: 500;
   color: var(--text-secondary);
   padding-bottom: 0.5rem;
-  margin-left: 1rem; 
+  margin-left: 1rem;
 
   /* Trik agar layout tidak "lompat" saat border muncul di hover/active */
-  border-bottom: 2px solid transparent; 
-  
-  /* Animasi transisi yang halus */
-  transition: all 0.2s ease-in-out; 
-  
+  border-bottom: 2px solid transparent;
 
+  /* Animasi transisi yang halus */
+  transition: all 0.2s ease-in-out;
 }
 
 /* Efek untuk link Navigasi Beasiswa saat ACTIVE atau di-HOVER */
@@ -102,11 +108,9 @@
   border-bottom-color: var(--color-primary-perlombaan);
 }
 
-
 /* ============================================= */
 /*  STYLING UNTUK SEARCHBAR              */
 /* ============================================= */
-
 
 .search-bar-container {
   display: flex;
@@ -136,7 +140,7 @@
   --bs-btn-bg: var(--color-accent); /* Warna background */
   --bs-btn-border-color: var(--color-accent); /* Warna border */
   --bs-btn-color: var(--color-accent-contrast); /* Warna teks */
-  
+
   /* Style untuk state hover & active */
   --bs-btn-hover-bg: #d97706; /* Oranye lebih gelap untuk hover */
   --bs-btn-hover-border-color: #d97706;
@@ -144,13 +148,12 @@
   --bs-btn-active-border-color: #b45309;
 
   /* Menghilangkan 'glow' biru bawaan bootstrap saat tombol di-fokus */
-  --bs-btn-focus-shadow-rgb: 245, 158, 11; 
-  
+  --bs-btn-focus-shadow-rgb: 245, 158, 11;
+
   /* Styling tambahan */
   font-weight: bold;
   padding: 0.75rem 1.5rem;
 }
-
 
 /* ============================================= */
 /*  STYLING UNTUK HERO SECTION                */
@@ -158,28 +161,29 @@
 
 /* Style dasar yang berlaku untuk semua variant hero section */
 .hero-section {
-  padding: 6rem 1.5rem; 
+  padding: 6rem 1.5rem;
   text-align: center;
   color: var(--text-on-dark);
-  
 }
 
 /* Variant untuk Halaman Beasiswa */
 .hero-section.beasiswa {
-  background: var(--color-hero-gradient); 
+  background: var(--color-hero-gradient);
   width: 100%;
 }
 
 /* Variant untuk Halaman Perlombaan */
 .hero-section.perlombaan {
-  background-color: var(--color-primary-perlombaan); /* Menggunakan warna hijau solid */
+  background-color: var(
+    --color-primary-perlombaan
+  ); /* Menggunakan warna hijau solid */
   width: 100%;
 }
 
 /* Wadah untuk konten agar mudah diatur posisinya */
 .hero-content {
   max-width: 80%px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .hero-section h1 {
@@ -196,14 +200,12 @@
 .hero-section p {
   font-size: 1.125rem;
   opacity: 0.9;
-  margin-bottom: 2.5rem; 
+  margin-bottom: 2.5rem;
 }
-
 
 /* ============================================= */
 /*  STYLING UNTUK DETAIL HERO SECTION                */
 /* ============================================= */
-
 
 /* Styling untuk Detail Hero Section */
 .hero-detail {
@@ -214,7 +216,7 @@
 
 /* Warna latar belakang berdasarkan variant */
 .hero-detail.beasiswa {
-  background: var(--color-hero-gradient); 
+  background: var(--color-hero-gradient);
 }
 
 .hero-detail.perlombaan {
@@ -226,11 +228,10 @@
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-  
 }
 
 .hero-detail .info-section {
-  flex: 0.9 ;
+  flex: 0.9;
 }
 
 .hero-detail-title {
@@ -242,7 +243,7 @@
 .hero-detail-description {
   font-size: 1.1rem;
   line-height: 1.6;
-  max-width: 600px; 
+  max-width: 600px;
   margin-bottom: 2rem;
 }
 
@@ -278,7 +279,6 @@
   height: 150px;
 }
 
-
 /* ============================================= */
 /*  STYLING UNTUK TAB CONTENT                */
 /* ============================================= */
@@ -303,7 +303,7 @@
 }
 
 .tab-system.beasiswa .tab-button.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px; /* Disesuaikan dengan border-bottom .tab-header */
   left: 0;
@@ -312,20 +312,19 @@
   background-color: #5d5fef; /* Warna Ungu */
 }
 
-
 /* --- Styling untuk Varian PERLOMBAAN (Hijau) --- */
 .tab-system.perlombaan .tab-button.active {
-  color: #2ECC71; /* Warna Hijau */
+  color: #2ecc71; /* Warna Hijau */
 }
 
 .tab-system.perlombaan .tab-button.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #2ECC71; 
+  background-color: #2ecc71;
 }
 
 /* Border bawah untuk header tab */
@@ -362,7 +361,7 @@
 }
 
 .grid-item {
-  background-color: #eafaf1; 
+  background-color: #eafaf1;
   padding: 1.5rem;
   border-radius: 8px;
 }
@@ -389,7 +388,7 @@
   margin: 0;
   line-height: 1.5;
 }
-.cta-link { 
+.cta-link {
   color: white;
   text-decoration: underline;
 }
@@ -399,7 +398,7 @@
   text-align: center;
   padding: 1rem;
   border-radius: 8px;
-  margin-top: 1rem; 
+  margin-top: 1rem;
 }
 .footer-contact-link {
   color: white;
@@ -410,21 +409,18 @@
 /*  STYLING UNTUK FOOTER                */
 /* ============================================= */
 .footer-custom {
-  background-color: var(--bg-footer); 
+  background-color: var(--bg-footer);
   color: var(--text-on-dark);
   padding: 1.5rem 0;
-  
-  
-  margin-top: auto; 
+
+  margin-top: auto;
 }
 
 .footer-text {
   text-align: center;
-  margin-bottom: 0; 
+  margin-bottom: 0;
   font-size: 0.9rem;
 }
-
-
 
 /* ============================================= */
 /*  STYLING UNTUK RESPONSIVE                */
