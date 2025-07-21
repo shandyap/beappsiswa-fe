@@ -6,6 +6,16 @@
   padding: 4rem 2rem;
   background-color: #f2f5fc;
   flex-wrap: wrap;
+  background: var(--color-hero-gradient);
+  color: #ffff;
+}
+
+.text-beasiswa{
+  color: var(--color-accent);
+}
+
+.text-perlombaan {
+  color: var(--color-primary-perlombaan);
 }
 .hero-beranda-section .text-content {
   flex: 1 1 400px;
@@ -19,7 +29,7 @@
 .hero-beranda-section p {
   font-size: 1.125rem;
   margin-bottom: 2rem;
-  color: #555;
+  color: #ffff;
 }
 .hero-beranda-section .cta-buttons > * {
   margin-right: 1rem;
@@ -34,32 +44,191 @@
   animation: fadeIn 1s ease-in-out;
 }
 
-/* Section Terbaru */
-.section-terbaru {
-  padding: 4rem 2rem;
-  background: #fff;
-}
-.section-terbaru .section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-.section-terbaru .section-header h2 {
-  font-size: 1.75rem;
+/* Styling Dasar untuk Tombol Hero */
+.btn-hero {
+  padding: 12px 28px;
+  font-size: 1rem;
   font-weight: 600;
+  border-radius: 8px;
 }
-.section-terbaru .section-header .lihat-semua {
-  color: #4f46e5;
-  font-weight: 500;
+
+/* Styling untuk Tombol "Jelajahi Beasiswa" */
+.btn-hero.btn-hero-primary {
+  background-color: #ffffff;
+  color: var(--color-primary-beasiswa);
+}
+
+.btn-hero.btn-hero-primary:hover {
+  background-color: #c9c9c9; /* Sedikit lebih gelap saat hover */
+  color: var(--color-primary-beasiswa);
+}
+
+/* Styling untuk Tombol "Lihat Perlombaan" */
+.btn-hero.btn-hero-secondary {
+  background-color: var(--color-primary-perlombaan); /* Warna hijau dari desain */
+  color: #ffffff;
+}
+
+.btn-hero.btn-hero-secondary:hover {
+  background-color: var(--btn-color-perlombaan-hover); /* Sedikit lebih gelap saat hover */
+  
+}
+
+.section-terbaru {
+  margin-top: 100px;
+}
+
+.lihat-semua {
+  color: var(--color-primary-beasiswa);
+  font-weight: bold;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
-.section-terbaru .card-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  animation: slideUp 0.8s ease-in-out;
+
+/* --- Styling untuk Card Lomba Terbaru --- */
+.custom-card-lomba {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.custom-card-lomba:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header-lomba {
+  padding: 1rem 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+/* Warna header sesuai tema */
+.theme-blue .card-header-lomba { background-color: var(--color-primary-beasiswa); }
+.theme-green .card-header-lomba { background-color: var(--color-primary-perlombaan); }
+.theme-orange .card-header-lomba { background-color: var(--color-accent); }
+
+.card-header-lomba .deadline-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.8;
+  display: block;
+}
+
+.card-header-lomba .deadline-date {
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1.2;
+}
+
+.card-header-lomba .deadline-year {
+  font-size: 0.9rem;
+  display: block;
+}
+
+.card-body-lomba {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.card-body-lomba .tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: white;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Warna tag sesuai tema */
+.theme-blue .card-body-lomba .tag { background-color: var(--color-primary-beasiswa); }
+.theme-green .card-body-lomba .tag { background-color: var(--color-primary-perlombaan); }
+.theme-orange .card-body-lomba .tag { background-color: var(--color-accent); }
+
+.card-title-lomba {
+  font-weight: 600;
+  color: #34495E;
+}
+
+.card-text-lomba {
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.card-hadiah-lomba {
+  color: #333;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.card-footer-lomba {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+/* Tombol menggunakan class .btn-custom yang sudah ada */
+
+/* Tombol menggunakan class .btn-custom yang sudah ada */
+
+.btn-custom {
+  width: 100%;
+  padding: 10px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+/* Warna tombol sesuai tema */
+.theme-blue .btn-custom { background-color: var(--color-primary-beasiswa); }
+.theme-blue .btn-custom:hover { background-color: var(--btn-color-beasiswa-hover); }
+.theme-blue .btn-custom:active { background-color: var(--btn-color-beasiswa-active); }
+
+.theme-green .btn-custom { background-color: var(--color-primary-perlombaan); }
+.theme-green .btn-custom:hover { background-color: var(--btn-color-perlombaan-hover); }
+.theme-green .btn-custom:active { background-color: var(--btn-color-perlombaan-active); }
+
+.theme-orange .btn-custom { background-color: var(--color-accent); }
+.theme-orange .btn-custom:hover { background-color: var(--color-accent-hover); }
+.theme-orange .btn-custom:active { background-color: var(--color-accent-active); }
+
+
+/* ... CSS lain yang sudah ada ... */
+
+/* Styling untuk Section Iklan */
+.advertise-section {
+  background-color: #f0f5ff; /* Warna biru sangat muda */
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  margin-top: 3rem;
+}
+
+.advertise-section h2 {
+  font-weight: 700;
+  color: #34495E;
+}
+
+.advertise-section .lead {
+  max-width: 600px;
+  margin: 1rem auto 1.5rem auto; /* center align dan beri jarak */
+  color: #555;
+}
+
+.advertise-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Memberi jarak antara tombol */
+  flex-wrap: wrap; /* Tombol akan turun ke bawah di layar kecil */
+  margin-top: 1.5rem;
+}
+
 
 /* Animation */
 @keyframes fadeIn {

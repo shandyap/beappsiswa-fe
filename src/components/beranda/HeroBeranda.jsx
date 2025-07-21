@@ -12,8 +12,8 @@ const HeroBeranda = () => {
         <Row className="align-items-center">
           <Col md={6} className="text-content">
             <h1>
-              Temukan <span className="text-primary">Beasiswa</span> dan{" "}
-              <span className="text-success">Perlombaan</span> Terbaik
+              Temukan <span className="text-beasiswa">Beasiswa</span> dan{" "}
+              <span className="text-perlombaan">Perlombaan</span> Terbaik
             </h1>
             <p>
               Platform informasi terlengkap untuk beasiswa dan perlombaan di
@@ -21,13 +21,15 @@ const HeroBeranda = () => {
             </p>
             <div className="cta-buttons">
               <Button
-                variant="primary"
-                className="me-2"
+                className="btn-hero btn-hero-primary me-2" // Ubah di sini
                 onClick={() => navigate("/beasiswa")}
               >
                 Jelajahi Beasiswa
               </Button>
-              <Button variant="success" onClick={() => navigate("/perlombaan")}>
+              <Button
+                className="btn-hero btn-hero-secondary" // Ubah di sini
+                onClick={() => navigate("/perlombaan")}
+              >
                 Lihat Perlombaan
               </Button>
             </div>

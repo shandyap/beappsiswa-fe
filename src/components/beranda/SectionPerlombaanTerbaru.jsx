@@ -1,35 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { getAllLomba } from "../../services/api";
-import CardPerlombaan from "./CardPerlombaan";
-import { Link } from "react-router-dom";
-import { Row, Col } from "react-bootstrap";
-import "./beranda.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
+import CardPerlombaan from './CardPerlombaan';
+import './beranda.css';
 
-const SectionPerlombaanTerbaru = () => {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    getAllLomba()
-      .then((res) => setData(res.slice(0, 3)))
-      .catch((err) => setError(err.message));
-  }, []);
-
+// Komponen menerima props: competitions, loading, dan error
+const SectionPerlombaanTerbaru = ({ competitions, loading, error }) => {
   return (
-    <section className="section-terbaru">
-      <div className="d-flex justify-content-between align-items-center mb-3">
+    <section className="section-terbaru mb-5">
+      <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Perlombaan Terbaru</h2>
         <Link to="/perlombaan" className="lihat-semua">
           Lihat Semua &gt;
         </Link>
       </div>
-      {error ? (
-        <div className="text-danger">Error: {error}</div>
-      ) : (
+      
+      {loading && <p>Memuat perlombaan...</p>}
+      {error && <div className="text-danger">Error: {error}</div>}
+      {!loading && !error && (
         <Row>
-          {data.map((item, index) => (
-            <Col key={index} md={4} className="mb-4">
-              <CardPerlombaan data={item} />
+          {competitions.map((item, index) => (
+            <Col key={item.id} md={4} className="mb-4">
+              <CardPerlombaan data={item} index={index} />
             </Col>
           ))}
         </Row>
