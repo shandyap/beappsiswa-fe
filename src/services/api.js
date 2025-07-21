@@ -50,8 +50,6 @@ export const deleteBeasiswaById = async (id) => {
   return handleResponse(response);
 };
 
-
-
 export const getAllLomba = async () => {
   const response = await fetch(`${BASE_URL}/lomba`);
   const data = await handleResponse(response);
