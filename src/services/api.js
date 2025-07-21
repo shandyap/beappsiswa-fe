@@ -86,8 +86,8 @@ export const updateCompetitionById = async (id, competitionData) => {
 };
 
 export const deleteLombaById = async (id) => {
-    const response = await fetch(`${BASE_URL}/lomba/${id}`, {
-      method: 'DELETE',
-    });
-    return handleResponse(response);
+  const response = await fetch(`${BASE_URL}/lomba/${id}`, {
+    method: 'DELETE',
+  });
+  return handleResponse(response);
 };
