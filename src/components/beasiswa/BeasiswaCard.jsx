@@ -1,12 +1,11 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { formatDate } from '../../utils';
+import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { formatDate } from "../../utils";
 
 const BeasiswaCard = ({ data, index }) => {
-  const colorThemes = ['beasiswa', 'perlombaan', 'accent'];
+  const colorThemes = ["beasiswa", "perlombaan", "accent"];
   const theme = colorThemes[index % colorThemes.length];
-
 
   return (
     <div className={`card-beasiswa ${theme}`}>

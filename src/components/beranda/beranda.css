@@ -1,0 +1,102 @@
+/* Hero Beranda */
+.hero-beranda-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  background-color: #f2f5fc;
+  flex-wrap: wrap;
+}
+.hero-beranda-section .text-content {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+.hero-beranda-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.hero-beranda-section p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+.hero-beranda-section .cta-buttons > * {
+  margin-right: 1rem;
+}
+.hero-beranda-section .hero-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+.hero-beranda-section .hero-image img {
+  max-width: 100%;
+  height: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Section Terbaru */
+.section-terbaru {
+  padding: 4rem 2rem;
+  background: #fff;
+}
+.section-terbaru .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.section-terbaru .section-header h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+.section-terbaru .section-header .lihat-semua {
+  color: #4f46e5;
+  font-weight: 500;
+  text-decoration: none;
+}
+.section-terbaru .card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-beranda-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-beranda-section .text-content {
+    margin-bottom: 2rem;
+  }
+  .section-terbaru .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-terbaru .section-header .lihat-semua {
+    margin-top: 0.5rem;
+  }
+}
