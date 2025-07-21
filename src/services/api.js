@@ -23,7 +23,7 @@ export const getBeasiswaById = async (id) => {
 
 export const addScholarship = async (scholarshipData) => {
   const response = await fetch(`${BASE_URL}/beasiswa`, {
-    method: "POST",
+    method: 'POST',
     headers: {
       "Content-Type": "application/json",
     },
@@ -34,7 +34,7 @@ export const addScholarship = async (scholarshipData) => {
 
 export const updateScholarshipById = async (id, scholarshipData) => {
   const response = await fetch(`${BASE_URL}/beasiswa/${id}`, {
-    method: "PUT",
+    method: 'PUT',
     headers: {
       "Content-Type": "application/json",
     },
@@ -45,7 +45,7 @@ export const updateScholarshipById = async (id, scholarshipData) => {
 
 export const deleteBeasiswaById = async (id) => {
   const response = await fetch(`${BASE_URL}/beasiswa/${id}`, {
-    method: "DELETE",
+    method: 'DELETE',
   });
   return handleResponse(response);
 };
@@ -65,7 +65,7 @@ export const getLombaById = async (id) => {
 
 export const addCompetition = async (competitionData) => {
   const response = await fetch(`${BASE_URL}/lomba`, {
-    method: "POST",
+    method: 'POST',
     headers: {
       "Content-Type": "application/json",
     },
@@ -76,7 +76,7 @@ export const addCompetition = async (competitionData) => {
 
 export const updateCompetitionById = async (id, competitionData) => {
   const response = await fetch(`${BASE_URL}/lomba/${id}`, {
-    method: "PUT",
+    method: 'PUT',
     headers: {
       "Content-Type": "application/json",
     },
@@ -87,7 +87,7 @@ export const updateCompetitionById = async (id, competitionData) => {
 
 export const deleteLombaById = async (id) => {
   const response = await fetch(`${BASE_URL}/lomba/${id}`, {
-    method: "DELETE",
+    method: 'DELETE',
   });
   return handleResponse(response);
 };
