@@ -1,5 +1,5 @@
 // Definisikan alamat dasar (base URL) dari backend kamu
-const BASE_URL = 'http://localhost:3000/api';
+const BASE_URL = 'https://beappsiswa-be.vercel.app';
 
 const handleResponse = async (response) => {
   if (!response.ok) {
@@ -89,7 +89,7 @@ export const updateCompetitionById = async (id, competitionData) => {
 
 export const deleteLombaById = async (id) => {
     const response = await fetch(`${BASE_URL}/lomba/${id}`, {
-        method: 'DELETE',
+      method: 'DELETE',
     });
     return handleResponse(response);
 }
