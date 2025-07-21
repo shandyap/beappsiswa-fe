@@ -90,4 +90,4 @@ export const deleteLombaById = async (id) => {
       method: 'DELETE',
     });
     return handleResponse(response);
-}
+};
