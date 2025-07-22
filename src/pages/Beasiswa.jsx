@@ -4,7 +4,7 @@ import BeasiswaList from '../components/beasiswa/BeasiswaList';
 import { getAllBeasiswa } from '../services/api';
 import { useSearchParams } from 'react-router-dom'; 
 import EmptyState from '../components/EmptyState'; // Import komponen EmptyState
-
+import Pagination from '../components/Pagination';
 const Beasiswa = () => {
   const [allBeasiswa, setAllBeasiswa] = useState([]);
   const [filteredBeasiswa, setFilteredBeasiswa] = useState([]);
@@ -13,6 +13,17 @@ const Beasiswa = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const keywordFromUrl = searchParams.get('title') || '';
+
+  // Pagination State
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 8;
+
+  // --- 3. Logika untuk memotong data sesuai halaman ---
+  const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
+  const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
+  // currentItems sekarang berisi 8 item yang akan ditampilkan
+  const currentItems = filteredBeasiswa.slice(indexOfFirstItem, indexOfLastItem);
+
 
   useEffect(() => {
     const fetchBeasiswaData = async () => {
@@ -38,9 +49,13 @@ const Beasiswa = () => {
     setFilteredBeasiswa(filtered); 
   }, [keywordFromUrl, allBeasiswa]); 
 
-  // Fungsi yang akan dipanggil oleh SearchBar untuk mengubah URL
   const handleSearch = (keyword) => {
     setSearchParams({ title: keyword });
+    setCurrentPage(1); // Reset ke halaman 1 setiap kali ada pencarian baru
+  };
+  
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
   return (
@@ -58,7 +73,18 @@ const Beasiswa = () => {
         {error && <div className="text-danger">Error: {error} 😥</div>}
         {!loading && !error && (
           filteredBeasiswa.length > 0 ? (
-          <BeasiswaList items={filteredBeasiswa} />
+            <>
+              {/* 4. Tampilkan HANYA currentItems */}
+              <BeasiswaList items={currentItems} />
+              
+              {/* 5. Render Komponen Pagination */}
+              <Pagination 
+                itemsPerPage={ITEMS_PER_PAGE}
+                totalItems={filteredBeasiswa.length}
+                currentPage={currentPage}
+                onPageChange={handlePageChange}
+              />
+            </>
           ) : (<EmptyState type="Beasiswa" keyword={keywordFromUrl} />)
         )}
       </div>

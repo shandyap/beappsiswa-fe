@@ -5,6 +5,7 @@ import PerlombaanList from '../components/perlombaan/PerlombaanList';
 import { getAllLomba } from '../services/api'; 
 import { useSearchParams } from 'react-router-dom';
 import EmptyState from '../components/EmptyState'; // Import komponen EmptyState
+import Pagination from '../components/Pagination';
 
 const Perlombaan = () => {
   const [allLomba, setAllLomba] = useState([]);
@@ -15,6 +16,16 @@ const Perlombaan = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const keywordFromUrl = searchParams.get('title') || '';
 
+    // Pagination State
+    const [currentPage, setCurrentPage] = useState(1);
+    const ITEMS_PER_PAGE = 4;
+    
+    // --- 3. Logika untuk memotong data sesuai halaman ---
+    const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
+    const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
+    // currentItems sekarang berisi 8 item yang akan ditampilkan
+    const currentItems = filteredLomba.slice(indexOfFirstItem, indexOfLastItem);
+  
   useEffect(() => {
     const fetchLombaData = async () => {
       try {
@@ -39,8 +50,13 @@ const Perlombaan = () => {
   }, [keywordFromUrl, allLomba]);
 
   const handleSearch = (keyword) => {
-    setSearchParams({ title: keyword }); // Update URL dengan keyword pencarian
-  }
+    setSearchParams({ title: keyword });
+    setCurrentPage(1); // Reset ke halaman 1 setiap kali ada pencarian baru
+  };
+  
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <div>
@@ -57,9 +73,19 @@ const Perlombaan = () => {
         {error && <div className="text-danger">Error: {error} 😥</div>}
         {!loading && !error && (
           filteredLomba.length > 0 ? (
-            <PerlombaanList items={filteredLomba} />
-          ) : (<EmptyState type="Perlombaan" keyword={keywordFromUrl}/>)
-          
+            <>
+              {/* 4. Tampilkan HANYA currentItems */}
+              <PerlombaanList items={currentItems} />
+              
+              {/* 5. Render Komponen Pagination */}
+              <Pagination 
+                itemsPerPage={ITEMS_PER_PAGE}
+                totalItems={filteredLomba.length}
+                currentPage={currentPage}
+                onPageChange={handlePageChange}
+              />
+            </>
+          ) : (<EmptyState type="Perlombaan" keyword={keywordFromUrl} />)
         )}
       </div>
     </div>

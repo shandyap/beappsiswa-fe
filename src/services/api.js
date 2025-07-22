@@ -1,5 +1,5 @@
 // Definisikan alamat dasar (base URL) dari backend kamu
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = "https://beappsiswa-be.vercel.app/api";
 
 const handleResponse = async (response) => {
   if (!response.ok) {
