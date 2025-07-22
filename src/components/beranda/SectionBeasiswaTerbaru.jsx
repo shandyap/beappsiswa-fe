@@ -16,7 +16,7 @@ const SectionBeasiswaTerbaru = ({ scholarships, loading, error }) => {
       </div>
       
       {/* Logika render berdasarkan props */}
-      {loading && <p>Memuat beasiswa...</p>}
+      {loading && <p className='loading-text'>Memuat beasiswa...</p>}
       {error && <div className="text-danger">Error: {error}</div>}
       {!loading && !error && (
         <Row>

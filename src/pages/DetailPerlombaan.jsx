@@ -40,7 +40,7 @@ const DetailPerlombaan = () => {
     }
   ];
 
-  if (loading) return <div>Memuat detail...</div>;
+  if (loading) return <div className='loading-text'>Memuat Detail Lomba</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (

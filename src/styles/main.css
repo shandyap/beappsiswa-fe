@@ -453,12 +453,25 @@
 /* ============================================= */
 /*  STYLING UNTUK FOOTER                */
 /* ============================================= */
+/* --- Sticky Footer Layout --- */
+
+/* Container utama aplikasi */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Tinggi minimal setinggi layar */
+}
+
+/* Area konten utama */
+.main-content {
+  flex-grow: 1; /* Kunci utama: membuat konten "tumbuh" dan mendorong footer */
+}
+
+/* --- Styling Footer-mu (dari kodemu sebelumnya) --- */
 .footer-custom {
-  background-color: var(--bg-footer);
+  background-color: var(--bg-footer); /* Ganti dengan variabel warnamu jika ada */
   color: var(--text-on-dark);
   padding: 1.5rem 0;
-
-  margin-top: auto;
 }
 
 .footer-text {
@@ -468,6 +481,30 @@
 }
 
 
+/* ============================================= */
+/*  STYLING UNTUK Loading                */
+/* ============================================= */
+.loading-text {
+  color: #888; /* Warna abu-abu yang tidak terlalu mencolok */
+  font-style: italic;
+  text-align: center; /* Posisikan di tengah container */
+  padding: 2rem;
+  
+  /* Menerapkan animasi berdenyut */
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Definisi animasi "pulse" */
+@keyframes pulse {
+  /* Pada awal dan akhir animasi, opacity normal */
+  0%, 100% {
+    opacity: 1;
+  }
+  /* Di tengah animasi, opacity berkurang (efek meredup) */
+  50% {
+    opacity: 0.6;
+  }
+}
 
 /* ============================================= */
 /*  STYLING UNTUK RESPONSIVE                */

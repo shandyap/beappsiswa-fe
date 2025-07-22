@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 const PerlombaanTable = ({competitions, onEdit, onDelete}) => {
 
   if (!competitions || competitions.length === 0) {
-    return <p>Belum ada data Perlombaan.</p>;
+    return <p className='loading-text'>Belum ada data Perlombaan.</p>;
   }
 
   return (

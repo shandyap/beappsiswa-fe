@@ -69,7 +69,7 @@ const Beasiswa = () => {
         onSearch={handleSearch}
       />
       <div className="container my-5">
-        {loading && <div>Memuat data beasiswa... ⏳</div>}
+        {loading && <div className='loading-text'>Memuat data beasiswa... ⏳</div>}
         {error && <div className="text-danger">Error: {error} 😥</div>}
         {!loading && !error && (
           filteredBeasiswa.length > 0 ? (

@@ -69,7 +69,7 @@ const Perlombaan = () => {
         onSearch={handleSearch}
       />
       <div className="container my-5">
-        {loading && <div>Memuat data perlombaan... ⏳</div>}
+        {loading && <div className='loading-text'>Memuat data perlombaan... ⏳</div>}
         {error && <div className="text-danger">Error: {error} 😥</div>}
         {!loading && !error && (
           filteredLomba.length > 0 ? (

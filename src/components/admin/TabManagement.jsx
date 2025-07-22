@@ -57,7 +57,7 @@ const TabManagement = ({refreshTrigger, onEditBeasiswa, onEditPerlombaan, onData
     {
       id: 'beasiswa',
       label: 'Beasiswa',
-      content: loading ? <p>Memuat...</p> : 
+      content: loading ? <p className='loading-text'>Memuat Data Beasiswa</p> : 
         <BeasiswaTable 
           scholarships={scholarshipData}
           onEdit={onEditBeasiswa}
@@ -66,7 +66,7 @@ const TabManagement = ({refreshTrigger, onEditBeasiswa, onEditPerlombaan, onData
     {
       id: 'perlombaan',
       label: 'Perlombaan',
-      content: loading ? <p>Memuat...</p> : 
+      content: loading ? <p className='loading-text'>Memuat Data Perlombaan</p> : 
       <PerlombaanTable 
         competitions={competitionData}
         onEdit={onEditPerlombaan}

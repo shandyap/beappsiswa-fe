@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 const BeasiswaTable = ({scholarships, onEdit, onDelete}) => {
 
   if (!scholarships || scholarships.length === 0) {
-    return <p>Belum ada data Beasiswa.</p>;
+    return <p className='loading-text'>Belum ada data Beasiswa.</p>;
   }
 
   return (

@@ -15,7 +15,7 @@ const SectionPerlombaanTerbaru = ({ competitions, loading, error }) => {
         </Link>
       </div>
       
-      {loading && <p>Memuat perlombaan...</p>}
+      {loading && <p className='loading-text'>Memuat perlombaan...</p>}
       {error && <div className="text-danger">Error: {error}</div>}
       {!loading && !error && (
         <Row>

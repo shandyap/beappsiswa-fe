@@ -15,22 +15,22 @@ function App() {
  const isAdminPage = location.pathname.startsWith('/admin');
 
   return (
-      <div>
+      <div className="app-container">
         {!isAdminPage && <NavbarComponent />}
-        <Routes>
-          <Route path='/' element={<Beranda/>} />
-          <Route path='/Beasiswa' element={<Beasiswa/>} />
-          <Route path='/Perlombaan' element={<Perlombaan/>} />
-          <Route path='/beasiswa/:id' element={<DetailBeasiswa/>} />
-          <Route path='/lomba/:id' element={<DetailPerlombaan/>} />
+        <main className="main-content">
+          <Routes>
+            <Route path='/' element={<Beranda/>} />
+            <Route path='/Beasiswa' element={<Beasiswa/>} />
+            <Route path='/Perlombaan' element={<Perlombaan/>} />
+            <Route path='/beasiswa/:id' element={<DetailBeasiswa/>} />
+            <Route path='/lomba/:id' element={<DetailPerlombaan/>} />
 
-          <Route path="/admin" element={<AdminLoginPage />} />
-          <Route element={<AdminRoute />}>
-            <Route path="/admin/dashboard" element={<AdminDashboard />} />
-            {/* <Route path="/admin/lomba/tambah" element={<TambahLombaPage />} /> */}
-            {/* <Route path="/admin/lomba/edit/:id" element={<EditLombaPage />} /> */}
-          </Route>
-        </Routes>
+            <Route path="/admin" element={<AdminLoginPage />} />
+            <Route element={<AdminRoute />}>
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            </Route>
+          </Routes>
+        </main>
         <FooterComponent/>
 
       </div>
