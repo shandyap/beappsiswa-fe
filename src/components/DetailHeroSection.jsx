@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
 import { formatDateDetailHero } from '../utils'; // Pastikan path ini sesuai dengan struktur proyek Anda
 
-
-
-
 const DetailHeroSection = ({ variant, data }) => {
   if (!data) {
     return null; // Jangan render apa-apa jika data belum ada
