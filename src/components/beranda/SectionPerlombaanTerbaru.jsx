@@ -2,9 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import CardPerlombaan from './CardPerlombaan';
+import { useIntersectionObserver } from '../../hooks/UseIntersectionObserver';
 import './beranda.css';
 
-// Komponen menerima props: competitions, loading, dan error
+const AnimatedCard = ({ children, index }) => {
+  // Opsi: animasi akan terpicu saat 10% bagian kartu terlihat
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+
+  return (
+    <div 
+      ref={ref} 
+      className={`card-animation-wrapper ${isVisible ? 'is-visible' : ''}`}
+      style={{ transitionDelay: `${index * 100}ms` }} // Efek muncul berurutan
+    >
+      {children}
+    </div>
+  );
+};
+
 const SectionPerlombaanTerbaru = ({ competitions, loading, error }) => {
   return (
     <section className="section-terbaru mb-5">
@@ -21,7 +36,9 @@ const SectionPerlombaanTerbaru = ({ competitions, loading, error }) => {
         <Row>
           {competitions.map((item, index) => (
             <Col key={item.id} md={4} className="mb-4">
-              <CardPerlombaan data={item} index={index} />
+              <AnimatedCard index={index}>
+                <CardPerlombaan data={item} index={index} />
+              </AnimatedCard>
             </Col>
           ))}
         </Row>

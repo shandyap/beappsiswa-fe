@@ -137,17 +137,17 @@
 /* Style utama untuk tombol custom kita */
 .btn-custom-accent {
   /* Menggunakan variabel warna kita */
-  --bs-btn-bg: var(--color-accent); /* Warna background */
-  --bs-btn-border-color: var(--color-accent); /* Warna border */
-  --bs-btn-color: var(--color-accent-contrast); /* Warna teks */
+  --bs-btn-bg: var(--color-accent); 
+  --bs-btn-border-color: var(--color-accent); 
+  --bs-btn-color: var(--color-accent-contrast); 
 
   /* Style untuk state hover & active */
-  --bs-btn-hover-bg: #d97706; /* Oranye lebih gelap untuk hover */
+  --bs-btn-hover-bg: #d97706; 
   --bs-btn-hover-border-color: #d97706;
-  --bs-btn-active-bg: #b45309; /* Oranye lebih gelap lagi untuk active/klik */
+  --bs-btn-active-bg: #b45309; 
   --bs-btn-active-border-color: #b45309;
 
-  /* Menghilangkan 'glow' biru bawaan bootstrap saat tombol di-fokus */
+  
   --bs-btn-focus-shadow-rgb: 245, 158, 11;
 
   /* Styling tambahan */
@@ -158,6 +158,52 @@
 /* ============================================= */
 /*  STYLING UNTUK HERO SECTION                */
 /* ============================================= */
+
+/* --- Animasi untuk Hero Section --- */
+
+/* Animasi untuk Judul dan Subjudul (muncul dari atas) */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animasi untuk Search Bar (muncul dari bawah) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Class untuk menerapkan animasi */
+.hero-content h1 {
+  /* Terapkan animasi fadeInDown, durasi 0.6 detik */
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.hero-content p {
+  /* Terapkan animasi fadeInDown, durasi 0.6 detik, dengan jeda 0.2 detik */
+  animation: fadeInDown 0.6s ease-out 0.2s forwards;
+  /* Atur opacity awal ke 0 agar jeda berfungsi */
+  opacity: 0;
+}
+
+.hero-content .search-bar-container {
+  /* Terapkan animasi fadeInUp, durasi 0.6 detik, dengan jeda 0.4 detik */
+  animation: fadeInUp 0.6s ease-out 0.4s forwards;
+  /* Atur opacity awal ke 0 agar jeda berfungsi */
+  opacity: 0;
+}
 
 /* Style dasar yang berlaku untuk semua variant hero section */
 .hero-section {
@@ -206,6 +252,54 @@
 /* ============================================= */
 /*  STYLING UNTUK DETAIL HERO SECTION                */
 /* ============================================= */
+
+/* --- Animasi untuk Detail Hero Section --- */
+
+/* Keyframes untuk elemen yang muncul dari kiri */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Keyframes untuk elemen yang muncul dari kanan */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Terapkan animasi ke elemen-elemen di dalam hero */
+
+.hero-detail .hero-detail-title {
+  animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.hero-detail .hero-detail-description {
+  /* Atur opacity awal agar delay berfungsi */
+  opacity: 0;
+  /* Tambahkan jeda 0.2 detik */
+  animation: slideInFromLeft 0.6s ease-out 0.2s forwards;
+}
+
+.hero-detail .hero-detail-tags {
+  opacity: 0;
+  animation: slideInFromLeft 0.6s ease-out 0.4s forwards;
+}
+
+.hero-detail .icon-section {
+  animation: slideInFromRight 0.6s ease-out forwards;
+}
 
 /* Styling untuk Detail Hero Section */
 .hero-detail {
@@ -283,6 +377,25 @@
 /*  STYLING UNTUK TAB CONTENT                */
 /* ============================================= */
 
+/* --- Animasi untuk Tab Navigation --- */
+
+/* Kita bisa menggunakan kembali keyframes fadeInUp yang sudah ada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-system {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.6s forwards;
+}
+
 /* Styling untuk Sistem Tab */
 /* Styling Tombol Tab Default */
 .tab-button {
@@ -305,16 +418,16 @@
 .tab-system.beasiswa .tab-button.active::after {
   content: "";
   position: absolute;
-  bottom: -2px; /* Disesuaikan dengan border-bottom .tab-header */
+  bottom: -2px; 
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #5d5fef; /* Warna Ungu */
+  background-color: #5d5fef; 
 }
 
 /* --- Styling untuk Varian PERLOMBAAN (Hijau) --- */
 .tab-system.perlombaan .tab-button.active {
-  color: #2ecc71; /* Warna Hijau */
+  color: #2ecc71; 
 }
 
 .tab-system.perlombaan .tab-button.active::after {
@@ -459,17 +572,17 @@
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Tinggi minimal setinggi layar */
+  min-height: 100vh; 
 }
 
 /* Area konten utama */
 .main-content {
-  flex-grow: 1; /* Kunci utama: membuat konten "tumbuh" dan mendorong footer */
+  flex-grow: 1; 
 }
 
 /* --- Styling Footer-mu (dari kodemu sebelumnya) --- */
 .footer-custom {
-  background-color: var(--bg-footer); /* Ganti dengan variabel warnamu jika ada */
+  background-color: var(--bg-footer);
   color: var(--text-on-dark);
   padding: 1.5rem 0;
 }
@@ -485,9 +598,9 @@
 /*  STYLING UNTUK Loading                */
 /* ============================================= */
 .loading-text {
-  color: #888; /* Warna abu-abu yang tidak terlalu mencolok */
+  color: #888;
   font-style: italic;
-  text-align: center; /* Posisikan di tengah container */
+  text-align: center; 
   padding: 2rem;
   
   /* Menerapkan animasi berdenyut */
@@ -496,14 +609,28 @@
 
 /* Definisi animasi "pulse" */
 @keyframes pulse {
-  /* Pada awal dan akhir animasi, opacity normal */
   0%, 100% {
     opacity: 1;
   }
-  /* Di tengah animasi, opacity berkurang (efek meredup) */
   50% {
     opacity: 0.6;
   }
+}
+
+
+/* ============================================= */
+/*  STYLING UNTUK WRAPPER ANIMASI                */
+/* ============================================= */
+.card-animation-wrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card-animation-wrapper.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ============================================= */
