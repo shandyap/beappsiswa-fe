@@ -4,7 +4,7 @@ import PagesHeroSection from '../components/PagesHeroSection';
 import PerlombaanList from '../components/perlombaan/PerlombaanList';
 import { getAllLomba } from '../services/api'; 
 import { useSearchParams } from 'react-router-dom';
-import EmptyState from '../components/EmptyState'; // Import komponen EmptyState
+import EmptyState from '../components/EmptyState'; 
 import Pagination from '../components/Pagination';
 
 const Perlombaan = () => {
@@ -20,10 +20,9 @@ const Perlombaan = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const ITEMS_PER_PAGE = 4;
     
-    // --- 3. Logika untuk memotong data sesuai halaman ---
+    // Logika untuk memotong data sesuai halaman
     const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
     const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
-    // currentItems sekarang berisi 8 item yang akan ditampilkan
     const currentItems = filteredLomba.slice(indexOfFirstItem, indexOfLastItem);
   
   useEffect(() => {
@@ -51,7 +50,7 @@ const Perlombaan = () => {
 
   const handleSearch = (keyword) => {
     setSearchParams({ title: keyword });
-    setCurrentPage(1); // Reset ke halaman 1 setiap kali ada pencarian baru
+    setCurrentPage(1);
   };
   
   const handlePageChange = (pageNumber) => {
@@ -74,10 +73,8 @@ const Perlombaan = () => {
         {!loading && !error && (
           filteredLomba.length > 0 ? (
             <>
-              {/* 4. Tampilkan HANYA currentItems */}
               <PerlombaanList items={currentItems} />
               
-              {/* 5. Render Komponen Pagination */}
               <Pagination 
                 itemsPerPage={ITEMS_PER_PAGE}
                 totalItems={filteredLomba.length}

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
-import { BsPerson, BsLock, BsEye, BsEyeSlash } from 'react-icons/bs'; // Impor ikon
-import '../components/admin/admin.css'; // Impor file CSS khusus
+import { BsPerson, BsLock, BsEye, BsEyeSlash } from 'react-icons/bs'; 
+import '../components/admin/admin.css';
 
 const AdminLoginPage = () => {
   const [id, setId] = useState('');

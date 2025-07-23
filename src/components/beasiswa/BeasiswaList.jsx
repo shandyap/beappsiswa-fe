@@ -1,6 +1,6 @@
 import React from 'react';
 import BeasiswaCard from './BeasiswaCard';
-import { useIntersectionObserver } from '../../hooks/UseIntersectionObserver';
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 const AnimatedCard = ({ children, index }) => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });

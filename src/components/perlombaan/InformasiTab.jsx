@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatCurrency } from '../../utils'; // Pastikan ini sesuai dengan utilitas formatCurrency Anda
+import { formatCurrency } from '../../utils'; 
 
 
 const InformasiTab = ({ data }) => {

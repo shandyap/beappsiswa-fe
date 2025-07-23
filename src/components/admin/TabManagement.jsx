@@ -51,7 +51,7 @@ const TabManagement = ({refreshTrigger, onEditBeasiswa, onEditPerlombaan, onData
     };
     
     fetchAllData();
-  }, [refreshTrigger]); // <-- Kunci pembaruan otomatis ada di sini
+  }, [refreshTrigger]);
 
   const tabs = [
     {
@@ -76,7 +76,6 @@ const TabManagement = ({refreshTrigger, onEditBeasiswa, onEditPerlombaan, onData
     }
   ];
 
-  // 2. Gunakan TabNavigation dengan konten yang sudah dibuat
   return (
     <div className="management-section">
       <TabNavigation tabs={tabs} variant="dashboard" />

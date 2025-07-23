@@ -16,14 +16,12 @@ function SearchBar({ onSearch, placeholderText, className }) {
   };
 
   useEffect(() => {
-    // Ambil keyword dari URL saat ini
     const urlKeyword = searchParams.get('judul') || '';
     if (urlKeyword !== keyword) {
       setKeyword(urlKeyword);
     }
   }, [searchParams]);
 
-  // Menggabungkan class bawaan dengan class tambahan dari props
   const containerClassName = `search-bar-container ${className || ''}`;
 
   return (

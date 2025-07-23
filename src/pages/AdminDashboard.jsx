@@ -27,7 +27,6 @@ const AdminDashboard = () => {
   const [editingPerlombaan, setEditingPerlombaan] = useState(null);
 
   const handleSuccess = () => {
-    // Menambah nilai state ini akan memicu useEffect di TabManagement
     setRefreshTrigger(currentValue => currentValue + 1);
   };
   

@@ -11,10 +11,8 @@ const PerlombaanTable = ({competitions, onEdit, onDelete}) => {
 
   return (
     <div className="management-table-container">
-      {/* Di sini bisa ditambahkan filter dan search bar nanti */}
       <div className="table-controls mb-3">
         <h4>Daftar Perlombaan</h4>
-        {/* Filter components go here */}
       </div>
 
       <table className="table table-hover">
@@ -46,7 +44,6 @@ const PerlombaanTable = ({competitions, onEdit, onDelete}) => {
           ))}
         </tbody>
       </table>
-      {/* Komponen pagination bisa ditambahkan di sini */}
     </div>
   );
 };

@@ -1,18 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
-import { formatDateDetailHero } from '../utils'; // Pastikan path ini sesuai dengan struktur proyek Anda
+import { formatDateDetailHero } from '../utils'; 
 
 const DetailHeroSection = ({ variant, data }) => {
   if (!data) {
-    return null; // Jangan render apa-apa jika data belum ada
+    return null; 
   }
 
-  
-  // Logika untuk memilih data & ikon berdasarkan variant
   const isBeasiswa = variant === 'beasiswa';
-
   let iconElement;
+
   if (isBeasiswa) {
     const beasiswaIconPath = '/assets/icons/beasiswa-cap.svg';
     iconElement = <img src={beasiswaIconPath} alt="Beasiswa Icon" className="hero-detail-icon" />;
@@ -52,7 +50,7 @@ const DetailHeroSection = ({ variant, data }) => {
 
 DetailHeroSection.propTypes = {
   variant: PropTypes.oneOf(['beasiswa', 'perlombaan']).isRequired,
-  data: PropTypes.object, // Data bisa null saat loading
+  data: PropTypes.object,
 };
 
 export default DetailHeroSection;

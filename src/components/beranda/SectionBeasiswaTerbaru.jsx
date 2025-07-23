@@ -2,26 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import BeasiswaCard from '../beasiswa/BeasiswaCard';
-import { useIntersectionObserver } from '../../hooks/UseIntersectionObserver';
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import './beranda.css';
 
 
 const AnimatedCard = ({ children, index }) => {
-  // Opsi: animasi akan terpicu saat 10% bagian kartu terlihat
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
 
   return (
     <div 
       ref={ref} 
       className={`card-animation-wrapper ${isVisible ? 'is-visible' : ''}`}
-      style={{ transitionDelay: `${index * 100}ms` }} // Efek muncul berurutan
+      style={{ transitionDelay: `${index * 100}ms` }} 
     >
       {children}
     </div>
   );
 };
 
-// Komponen sekarang menerima props: scholarships, loading, dan error
 const SectionBeasiswaTerbaru = ({ scholarships, loading, error }) => {
   return (
     <section className="section-terbaru mb-5">
@@ -32,7 +30,6 @@ const SectionBeasiswaTerbaru = ({ scholarships, loading, error }) => {
         </Link>
       </div>
       
-      {/* Logika render berdasarkan props */}
       {loading && <p className='loading-text'>Memuat beasiswa...</p>}
       {error && <div className="text-danger">Error: {error}</div>}
       {!loading && !error && (

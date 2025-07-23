@@ -6,7 +6,7 @@ const AdminRoute = () => {
   const { isAdmin } = useAuth();
 
   // Jika state isAdmin adalah true, tampilkan konten halaman admin (Outlet).
-  // Jika false, "usir" pengguna kembali ke halaman login admin.
+  // Jika false, tolak pengguna kembali ke halaman login admin.
   return isAdmin ? <Outlet /> : <Navigate to="/admin" />;
 };
 

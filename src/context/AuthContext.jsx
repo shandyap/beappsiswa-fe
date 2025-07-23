@@ -30,7 +30,6 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Hook untuk mempermudah penggunaan
 export const useAuth = () => {
   return useContext(AuthContext);
 };

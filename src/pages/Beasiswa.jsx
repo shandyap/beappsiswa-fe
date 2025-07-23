@@ -74,10 +74,8 @@ const Beasiswa = () => {
         {!loading && !error && (
           filteredBeasiswa.length > 0 ? (
             <>
-              {/* 4. Tampilkan HANYA currentItems */}
               <BeasiswaList items={currentItems} />
               
-              {/* 5. Render Komponen Pagination */}
               <Pagination 
                 itemsPerPage={ITEMS_PER_PAGE}
                 totalItems={filteredBeasiswa.length}

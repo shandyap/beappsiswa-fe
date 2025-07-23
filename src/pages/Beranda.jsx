@@ -4,7 +4,7 @@ import SectionBeasiswaTerbaru from '../components/beranda/SectionBeasiswaTerbaru
 import SectionPerlombaanTerbaru from '../components/beranda/SectionPerlombaanTerbaru';
 import AdvertiseSection from '../components/beranda/AdvertiseSection';
 import { Container } from 'react-bootstrap';
-import { getAllBeasiswa, getAllLomba } from '../services/api'; // Impor kedua fungsi API
+import { getAllBeasiswa, getAllLomba } from '../services/api'; 
 
 const Beranda = () => {
   // State untuk data
@@ -19,13 +19,11 @@ const Beranda = () => {
     const fetchHomepageData = async () => {
       try {
         setLoading(true);
-        // Ambil kedua data secara bersamaan untuk efisiensi
         const [beasiswaRes, lombaRes] = await Promise.all([
           getAllBeasiswa(),
           getAllLomba()
         ]);
         
-        // Ambil hanya 3 data pertama untuk ditampilkan di beranda
         setBeasiswaData(beasiswaRes.slice(0, 3));
         setLombaData(lombaRes.slice(0, 3));
 
@@ -38,7 +36,7 @@ const Beranda = () => {
     };
 
     fetchHomepageData();
-  }, []); // [] berarti hanya berjalan sekali saat komponen dimuat
+  }, []);
 
   return (
     <>
