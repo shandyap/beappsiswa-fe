@@ -6,14 +6,13 @@ import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import './beranda.css';
 
 const AnimatedCard = ({ children, index }) => {
-  // Opsi: animasi akan terpicu saat 10% bagian kartu terlihat
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
 
   return (
     <div 
       ref={ref} 
       className={`card-animation-wrapper ${isVisible ? 'is-visible' : ''}`}
-      style={{ transitionDelay: `${index * 100}ms` }} // Efek muncul berurutan
+      style={{ transitionDelay: `${index * 100}ms` }} 
     >
       {children}
     </div>

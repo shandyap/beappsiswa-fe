@@ -130,6 +130,10 @@
   color: #10B981;
 }
 
+.detail-section.red {
+  background-color: #FEE2E2;
+}
+
 .detail-section.alternate, .detail-section .checklist-item {
   color: #8C929C;
 }
@@ -174,7 +178,6 @@
 
 @media (min-width: 768px) {
   .beasiswa-list-container {
-    /* Tampilkan 2 kolom dengan lebar yang sama */
     grid-template-columns: repeat(2, 1fr);
   }
 }

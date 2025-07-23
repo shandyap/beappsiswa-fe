@@ -103,7 +103,6 @@ const AddPerlombaanModal = ({ show, onHide, onSuccess }) => {
       </Modal.Header>
       <Form onSubmit={handleSubmit}>
         <Modal.Body>
-          {/* --- Bagian Utama --- */}
           <Row>
             <Col md={6}><Form.Group className="mb-3"><Form.Label>Judul Lomba</Form.Label><Form.Control type="text" name="judul" value={formData.judul} onChange={handleChange} required /></Form.Group></Col>
             <Col md={6}><Form.Group className="mb-3"><Form.Label>Penyelenggara</Form.Label><Form.Control type="text" name="penyelenggara" value={formData.penyelenggara} onChange={handleChange} required /></Form.Group></Col>
@@ -114,7 +113,6 @@ const AddPerlombaanModal = ({ show, onHide, onSuccess }) => {
             <Col md={6}><Form.Group className="mb-3"><Form.Label>Jenis Lomba</Form.Label><Form.Control type="text" name="jenis_lomba" value={formData.jenis_lomba} placeholder="Contoh: Desain Grafis" onChange={handleChange} required /></Form.Group></Col>
           </Row>
 
-          {/* --- Bagian Peserta & Kategori --- */}
           <Form.Group className="mb-3"><Form.Label>Kategori (pisahkan dengan koma)</Form.Label><Form.Control type="text" name="kategori" value={formData.kategori} placeholder="Contoh: Pelajar, Mahasiswa" onChange={handleChange} required /></Form.Group>
           <Row>
             <Col md={6}><Form.Group className="mb-3"><Form.Label>Tingkat</Form.Label><Form.Control type="text" name="tingkat" value={formData.tingkat} placeholder="Contoh: Nasional" onChange={handleChange} required /></Form.Group></Col>
@@ -126,17 +124,14 @@ const AddPerlombaanModal = ({ show, onHide, onSuccess }) => {
           </Row>
           <Form.Group className="mb-3"><Form.Label>Target Peserta</Form.Label><Form.Control type="text" name="target_peserta" value={formData.target_peserta} onChange={handleChange} required /></Form.Group>
           
-          {/* --- Bagian Pendaftaran --- */}
           <Row>
             <Col md={6}><Form.Group className="mb-3"><Form.Label>Biaya Pendaftaran</Form.Label><Form.Control type="number" name="biaya_pendaftaran" value={formData.biaya_pendaftaran} onChange={handleChange} required /></Form.Group></Col>
             <Col md={6}><Form.Group className="mb-3"><Form.Label>Link Pendaftaran</Form.Label><Form.Control type="url" name="link_pendaftaran" value={formData.link_pendaftaran} placeholder="https://..." onChange={handleChange} required /></Form.Group></Col>
           </Row>
 
-          {/* --- Bagian Detail (Array) --- */}
           <Form.Group className="mb-3"><Form.Label>Syarat & Ketentuan (pisahkan dengan koma)</Form.Label><Form.Control as="textarea" rows={2} name="syarat_ketentuan" value={formData.syarat_ketentuan} onChange={handleChange} required /></Form.Group>
           <Form.Group className="mb-3"><Form.Label>Cara Mendaftar (pisahkan dengan koma)</Form.Label><Form.Control as="textarea" rows={2} name="cara_mendaftar" value={formData.cara_mendaftar} onChange={handleChange} required /></Form.Group>
 
-          {/* --- Bagian Timeline --- */}
           <hr/>
           <h5>Timeline</h5>
           <Row>
@@ -150,7 +145,6 @@ const AddPerlombaanModal = ({ show, onHide, onSuccess }) => {
             <Col><Form.Group className="mb-3"><Form.Label>Pengumuman</Form.Label><Form.Control type="date" name="timeline.pengumuman" value={formData.timeline.pengumuman} onChange={handleChange} required /></Form.Group></Col>
           </Row>
 
-          {/* --- Bagian Kontak --- */}
           <hr/>
           <h5>Kontak</h5>
           <Row>
@@ -159,7 +153,6 @@ const AddPerlombaanModal = ({ show, onHide, onSuccess }) => {
             <Col><Form.Group className="mb-3"><Form.Label>Instagram</Form.Label><Form.Control type="text" name="kontak.instagram" value={formData.kontak.instagram} placeholder="@username" onChange={handleChange} /></Form.Group></Col>
           </Row>
 
-          {/* --- Bagian Dinamis --- */}
           <hr />
           <h5>Hadiah</h5>
           {formData.hadiah.map((item, index) => (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import './beranda.css'; // Kita gunakan CSS yang sama
+import './beranda.css'; 
 
 const AdvertiseSection = () => {
   return (
@@ -12,16 +12,16 @@ const AdvertiseSection = () => {
       </p>
       <div className="advertise-buttons">
         <Button 
-          href="mailto:partnership@beappsiswa.com" 
-          className="btn-hero btn-hero-primary" // Tombol Email
+          href="mailto:shandylatoz851@gmail.com" 
+          className="btn-hero btn-hero-primary" 
         >
           Hubungi via Email
         </Button>
         <Button 
-          href="https://wa.me/6281234567890" // Ganti dengan nomor WA-mu
+          href="https://wa.me/6289601990940" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="btn-hero btn-hero-secondary" // Tombol WhatsApp
+          className="btn-hero btn-hero-secondary" 
         >
           Chat via WhatsApp
         </Button>

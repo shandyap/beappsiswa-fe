@@ -7,7 +7,6 @@ const CtaCard = ({ children, link }) => {
     <div className="cta-card">
       <div className="cta-content">
         <h3>Siap untuk Mengambil Langkah Berikutnya?</h3>
-        {/* Konten dinamis akan dirender di sini */}
         {children}
       </div>
       <div className="cta-action">

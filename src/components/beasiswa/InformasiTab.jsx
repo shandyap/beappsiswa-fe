@@ -64,7 +64,7 @@ const InformasiTab = ({ data }) => {
         </div>
       </div>
       {/* Bagian Kuota Penerima */}
-      <div className="detail-section">
+      <div className="detail-section red">
         <h2>Kuota Penerimaan</h2>
         <div className="checklist-item">
           {scholarship.jumlah_pendaftar} peserta

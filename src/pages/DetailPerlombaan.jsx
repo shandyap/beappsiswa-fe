@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getLombaById } from '../services/api'; // Fungsi fetch dari api.js
-import DetailHeroSection from '../components/DetailHeroSection'; // Komponen detail hero section
+import { getLombaById } from '../services/api'; 
+import DetailHeroSection from '../components/DetailHeroSection'; 
 import TabNavigation from '../components/TabNavigation';
 import PersyaratanTab from '../components/perlombaan/PersyaratanTab';
 import InformasiTab from '../components/perlombaan/InformasiTab';
 
 const DetailPerlombaan = () => {
-  const { id } = useParams(); // Ambil ID dari URL
+  const { id } = useParams(); 
   const [lomba, setLomba] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

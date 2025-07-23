@@ -45,7 +45,6 @@ const BeasiswaTable = ({scholarships, onEdit, onDelete}) => {
           ))}
         </tbody>
       </table>
-      {/* Komponen pagination bisa ditambahkan di sini */}
     </div>
   );
 };

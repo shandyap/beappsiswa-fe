@@ -1,15 +1,12 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import SearchBar from './SearchBar'; // Import komponen SearchBar
-
+import SearchBar from './SearchBar'; 
 
 const PagesHeroSection = ({ variant, title, highlightedText, subtitle, placeholderText, onSearch }) => {
   
-  // Memisahkan judul untuk memberi style pada kata yang di-highlight
   const titleParts = title.split(highlightedText);
 
   return (
-    // className akan menjadi 'hero-section beasiswa' atau 'hero-section perlombaan'
     <section className={`hero-section ${variant}`}>
       <Container fluid="md">
         <div className="hero-content">

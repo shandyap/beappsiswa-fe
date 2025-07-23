@@ -1,7 +1,6 @@
 import { Container } from 'react-bootstrap';
 
 const FooterComponent = () => {
-  // Mengambil tahun saat ini secara dinamis
   const currentYear = new Date().getFullYear();
 
   return (

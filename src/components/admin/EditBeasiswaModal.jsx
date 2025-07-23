@@ -29,10 +29,8 @@ const EditBeasiswaModal = ({ show, onHide, onSuccess, scholarshipData }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // useEffect untuk mengisi form saat data beasiswa berubah (saat modal dibuka)
   useEffect(() => {
     if (scholarshipData) {
-      // Ubah kembali array menjadi string yang dipisah koma untuk ditampilkan di input
       const formatForDateInput = (dateString) => {
         if (!dateString) return '';
         return new Date(dateString).toISOString().split('T')[0];
@@ -40,14 +38,12 @@ const EditBeasiswaModal = ({ show, onHide, onSuccess, scholarshipData }) => {
       
       setFormData({
         ...scholarshipData,
-        // Ubah kembali array menjadi string koma untuk ditampilkan di input
         tingkat_pendidikan: scholarshipData.tingkat_pendidikan?.join(', ') || '',
         bidang_studi: scholarshipData.bidang_studi?.join(', ') || '',
         lokasi: scholarshipData.lokasi?.join(', ') || '',
         cakupan: scholarshipData.cakupan?.join(', ') || '',
         syarat_ketentuan: scholarshipData.syarat_ketentuan?.join(', ') || '',
         dokumen_dibutuhkan: scholarshipData.dokumen_dibutuhkan?.join(', ') || '',
-        // Format tanggal agar bisa ditampilkan di input
         timeline: {
             pendaftaran_mulai: formatForDateInput(scholarshipData.timeline?.pendaftaran_mulai),
             pendaftaran_berakhir: formatForDateInput(scholarshipData.timeline?.pendaftaran_berakhir)

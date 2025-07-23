@@ -284,22 +284,34 @@
 
 @media (max-width: 768px) {
   .card-lomba {
-    /* Ubah layout menjadi vertikal (atas-bawah) */
     flex-direction: column;
   }
 
   .date-section {
-    /* Buat bagian tanggal menjadi full-width */
     width: 100%;
-    border-radius: 0; /* Hapus radius jika ada */
+    border-radius: 0; 
   }
 
   .info-section {
-    /* Sesuaikan padding jika perlu */
     padding: 1.5rem;
   }
 
   .btn-card {
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .timeline-item {
+    flex-direction: column; 
+    
+    align-items: flex-start; 
+
+    gap: 4px; 
+  }
+
+  .timeline-item .timeline-date {
+    text-align: left; 
+    font-size: 1.1rem; 
   }
 }

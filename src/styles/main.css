@@ -6,7 +6,6 @@
   font-family: "Inter", sans-serif;
 }
 :root {
-  /* Palet Warna Mentah dari Figma */
   --raw-color-blue: #4d57d6;
   --raw-color-purple: #6551cf;
   --raw-color-green-bright: #12b981;
@@ -19,10 +18,9 @@
   --raw-color-light-gray: #f8fafc;
   --raw-color-border: #f9fafb;
 
-  /* Variabel Semantik (Berdasarkan Penggunaan) */
   --color-primary-beasiswa: var(
     --raw-color-purple
-  ); /* Dipilih ungu agar lebih kontras */
+  ); 
   --color-primary-perlombaan: var(--raw-color-green-bright);
   --color-hero-gradient: linear-gradient(
     to bottom right,
@@ -87,21 +85,17 @@
   padding-bottom: 0.5rem;
   margin-left: 1rem;
 
-  /* Trik agar layout tidak "lompat" saat border muncul di hover/active */
   border-bottom: 2px solid transparent;
 
-  /* Animasi transisi yang halus */
   transition: all 0.2s ease-in-out;
 }
 
-/* Efek untuk link Navigasi Beasiswa saat ACTIVE atau di-HOVER */
 .nav-link-beasiswa.active,
 .nav-link-beasiswa:hover {
   color: var(--color-primary-beasiswa) !important;
   border-bottom-color: var(--color-primary-beasiswa);
 }
 
-/* Efek untuk link Navigasi Perlombaan saat ACTIVE atau di-HOVER */
 .nav-link-perlombaan.active,
 .nav-link-perlombaan:hover {
   color: var(--color-primary-perlombaan) !important;
@@ -114,34 +108,34 @@
 
 /* Container untuk Search Bar */
 .search-bar-container {
-  display: flex; /* 1. Mengaktifkan Flexbox */
-  max-width: 600px; /* Batasi lebar search bar */
-  margin: 0 auto; /* Posisikan di tengah */
+  display: flex; 
+  max-width: 800px;
+  margin: 0 auto; 
   border: 1px solid #ddd;
-  border-radius: 10px; /* Membuat sudut menjadi sangat tumpul (pill shape) */
+  border-radius: 10px; 
   background-color: #fff;
-  overflow: hidden; /* Penting untuk menyatukan border-radius */
+  overflow: hidden; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Styling untuk Input Field */
 .search-bar-container .search-input {
-  flex-grow: 1; /* 2. Biarkan input mengambil sisa ruang */
-  border: none; /* Hapus border bawaan */
+  flex-grow: 1; 
+  border: none; 
   padding: 14px 20px;
   font-size: 1rem;
   background-color: transparent;
 }
 
 .search-bar-container .search-input:focus {
-  outline: none; /* Hapus outline saat di-klik */
+  outline: none; 
 }
 
 /* Styling untuk Tombol Cari */
 .search-bar-container .btn-custom-accent {
-  flex-shrink: 0; /* Mencegah tombol menyusut */
-  border: none; /* Hapus border bawaan */
-  background-color: #f39c12; /* Warna oranye */
+  flex-shrink: 0; 
+  border: none; 
+  background-color: #f39c12;
   color: white;
   font-weight: 600;
   padding: 0 30px;
@@ -150,7 +144,7 @@
 }
 
 .search-bar-container .btn-custom-accent:hover {
-  background-color: #e67e22; /* Warna oranye lebih gelap */
+  background-color: #e67e22;
 }
 
 /* ============================================= */

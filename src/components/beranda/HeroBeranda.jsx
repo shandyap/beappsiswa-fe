@@ -27,7 +27,7 @@ const HeroBeranda = () => {
                 Jelajahi Beasiswa
               </Button>
               <Button
-                className="btn-hero btn-hero-secondary" // Ubah di sini
+                className="btn-hero btn-hero-secondary" 
                 onClick={() => navigate("/perlombaan")}
               >
                 Lihat Perlombaan
