@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import BeasiswaCard from '../beasiswa/BeasiswaCard';
-import { useIntersectionObserver } from '../../hooks/UseIntersectionObserver';
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import './beranda.css';
 
 

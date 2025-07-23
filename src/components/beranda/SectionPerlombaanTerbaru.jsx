@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import CardPerlombaan from './CardPerlombaan';
-import { useIntersectionObserver } from '../../hooks/UseIntersectionObserver';
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import './beranda.css';
 
 const AnimatedCard = ({ children, index }) => {
