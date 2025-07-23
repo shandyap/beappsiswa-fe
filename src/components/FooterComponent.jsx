@@ -6,7 +6,7 @@ const FooterComponent = () => {
 
   return (
     <footer className="footer-custom">
-      <Container>
+      <Container fluid="md">
         <p className="footer-text">
           &copy; {currentYear} BeAppsiswa. Hak Cipta Dilindungi.
         </p>

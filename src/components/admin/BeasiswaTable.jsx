@@ -21,7 +21,7 @@ const BeasiswaTable = ({scholarships, onEdit, onDelete}) => {
             <th>Penyelenggara</th>
             <th>Kategori</th>
             <th>Status</th>
-            <th>Pendaftar</th>
+            <th>Kuota</th>
             <th>Aksi</th>
           </tr>
         </thead>

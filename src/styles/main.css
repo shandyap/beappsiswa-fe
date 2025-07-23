@@ -112,47 +112,45 @@
 /*  STYLING UNTUK SEARCHBAR              */
 /* ============================================= */
 
+/* Container untuk Search Bar */
 .search-bar-container {
-  display: flex;
-  background-color: var(--raw-color-white);
-  border-radius: 12px;
-  padding: 0.5rem;
-  max-width: 80%;
-  margin: 0 auto;
+  display: flex; /* 1. Mengaktifkan Flexbox */
+  max-width: 600px; /* Batasi lebar search bar */
+  margin: 0 auto; /* Posisikan di tengah */
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Membuat sudut menjadi sangat tumpul (pill shape) */
+  background-color: #fff;
+  overflow: hidden; /* Penting untuk menyatukan border-radius */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.search-input {
-  flex-grow: 1;
-  border: none;
-  outline: none;
-  background-color: transparent;
+/* Styling untuk Input Field */
+.search-bar-container .search-input {
+  flex-grow: 1; /* 2. Biarkan input mengambil sisa ruang */
+  border: none; /* Hapus border bawaan */
+  padding: 14px 20px;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
-  color: var(--text-primary);
+  background-color: transparent;
 }
 
-/* Custom Styling Button Bootstrap */
+.search-bar-container .search-input:focus {
+  outline: none; /* Hapus outline saat di-klik */
+}
 
-/* Style utama untuk tombol custom kita */
-.btn-custom-accent {
-  /* Menggunakan variabel warna kita */
-  --bs-btn-bg: var(--color-accent); 
-  --bs-btn-border-color: var(--color-accent); 
-  --bs-btn-color: var(--color-accent-contrast); 
+/* Styling untuk Tombol Cari */
+.search-bar-container .btn-custom-accent {
+  flex-shrink: 0; /* Mencegah tombol menyusut */
+  border: none; /* Hapus border bawaan */
+  background-color: #f39c12; /* Warna oranye */
+  color: white;
+  font-weight: 600;
+  padding: 0 30px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
-  /* Style untuk state hover & active */
-  --bs-btn-hover-bg: #d97706; 
-  --bs-btn-hover-border-color: #d97706;
-  --bs-btn-active-bg: #b45309; 
-  --bs-btn-active-border-color: #b45309;
-
-  
-  --bs-btn-focus-shadow-rgb: 245, 158, 11;
-
-  /* Styling tambahan */
-  font-weight: bold;
-  padding: 0.75rem 1.5rem;
+.search-bar-container .btn-custom-accent:hover {
+  background-color: #e67e22; /* Warna oranye lebih gelap */
 }
 
 /* ============================================= */
@@ -652,5 +650,38 @@
   }
   .icon-section {
     margin-top: 2rem;
+  }
+}
+
+/* --- ATURAN RESPONSIVE UNTUK LAYAR DI BAWAH 400px --- */
+@media (max-width: 400px) {
+  .search-bar-container {
+    /* 1. Ubah susunan menjadi vertikal */
+    flex-direction: column;
+    
+    /* 2. Beri jarak antar elemen */
+    gap: 0.75rem; /* Sekitar 12px */
+
+    /* 3. Hapus style container karena elemen akan di-style sendiri */
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .search-bar-container .search-input {
+    /* 4. Beri style lagi pada input agar terlihat seperti container */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #fff;
+  }
+
+  .search-bar-container .btn-custom-accent {
+    /* 5. Buat tombol menjadi full-width */
+    width: 50%;
+    border-radius: 10px;
+    height: 40px;
+    margin: 0 auto;;
   }
 }

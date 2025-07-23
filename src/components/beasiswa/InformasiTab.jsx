@@ -46,7 +46,7 @@ const InformasiTab = ({ data }) => {
         </ul>
       </div>
       {/* Bagian Durasi */}
-      <div className="detail-section alternate">
+      <div className="detail-section green">
         <h2>Durasi</h2>
         <div className="checklist-item">
           {scholarship.durasi}
@@ -61,6 +61,13 @@ const InformasiTab = ({ data }) => {
                 {lokasi}
              </div>
           ))}
+        </div>
+      </div>
+      {/* Bagian Kuota Penerima */}
+      <div className="detail-section">
+        <h2>Kuota Penerimaan</h2>
+        <div className="checklist-item">
+          {scholarship.jumlah_pendaftar} peserta
         </div>
       </div>
 

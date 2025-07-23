@@ -101,9 +101,8 @@
 /* ============================================= */
 
 .perlombaan-list-container {
-  display: grid;
-  /* Membuat 1 kolom saja untuk layout ini */
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem; 
   padding: 3rem 0;
   width: 70%;
@@ -133,6 +132,19 @@
   font-size: 1.5rem;
 }
 
+.detail-section.purple {
+  background-color: #F4ECF7; 
+}
+
+.detail-section.orange {
+  background-color: #FFF3E0; 
+}
+
+.detail-section.blue {
+  background-color: #E3F2FD; 
+}
+
+
 /* --- Box Info di Dalam Kartu --- */
 .info-box {
   padding: 1rem 1.5rem;
@@ -157,14 +169,16 @@
 /* --- Varian Warna Box Info --- */
 .info-box.green {
   background-color: #EAF7EE; 
-}
-
-.info-box.purple {
-  background-color: #F4ECF7;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .info-box.orange {
   background-color: #FEF5E7; 
+}
+
+.info-box.red {
+  background-color: #FDEDED; 
 }
 
 
@@ -256,4 +270,36 @@
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border-color: #ced4da;
+}
+
+/* --- Media Query untuk Layar Mobile --- */
+
+@media (min-width: 992px) {
+  .perlombaan-list-container {
+    /* Contoh: Di layar besar, perlombaan menjadi 3 kolom */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .card-lomba {
+    /* Ubah layout menjadi vertikal (atas-bawah) */
+    flex-direction: column;
+  }
+
+  .date-section {
+    /* Buat bagian tanggal menjadi full-width */
+    width: 100%;
+    border-radius: 0; /* Hapus radius jika ada */
+  }
+
+  .info-section {
+    /* Sesuaikan padding jika perlu */
+    padding: 1.5rem;
+  }
+
+  .btn-card {
+    margin: 0 auto;
+  }
 }

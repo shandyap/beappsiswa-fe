@@ -11,7 +11,7 @@ const PagesHeroSection = ({ variant, title, highlightedText, subtitle, placehold
   return (
     // className akan menjadi 'hero-section beasiswa' atau 'hero-section perlombaan'
     <section className={`hero-section ${variant}`}>
-      <Container>
+      <Container fluid="md">
         <div className="hero-content">
           <h1>
             {titleParts[0]}

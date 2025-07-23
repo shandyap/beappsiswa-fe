@@ -29,9 +29,9 @@ const PersyaratanTab = ({ data }) => {
   return (
     <div>
       {/* Syarat Ketentuan */}
-      <div className="detail-section">
+      <div className="detail-section green">
         <h2>Syarat Ketentuan</h2>
-        <div className="info-box green">
+        <div className="info-box">
           <ul>
             {competition.syarat_ketentuan?.map((syarat, index) => (
               <li key={index} className="checklist-item">
@@ -44,9 +44,9 @@ const PersyaratanTab = ({ data }) => {
       </div>
 
       {/* Cara Mendaftar */}
-      <div className="detail-section">
+      <div className="detail-section purple">
         <h2>Cara Mendaftar</h2>
-        <div className="info-box purple">
+        <div className="info-box">
           <ul>
             {competition.cara_mendaftar?.map((cara, index) => (
               <li key={index} className="checklist-item">
@@ -59,9 +59,9 @@ const PersyaratanTab = ({ data }) => {
       </div>
 
       {/* Timeline Pendaftaran */}
-      <div className="detail-section">
+      <div className="detail-section blue">
         <h2>Timeline Pendaftaran</h2>
-        <div className="info-box purple">
+        <div className="info-box">
           <ul className="timeline-list">
             <li className="timeline-item">
               <span>Mulai Pendaftaran:</span>
@@ -91,7 +91,7 @@ const PersyaratanTab = ({ data }) => {
         </div>
       </div>
       <div className="detail-section">
-        <h2>Media & Informasi</h2>
+        <h2 className='text-center'>Media & Informasi</h2>
         <div className="media-links-container">
           {competition.media_promosi?.map((media) => (
             <a
