@@ -9,20 +9,20 @@ const InformasiTab = ({ data }) => {
     <div>
       {/* Tema Lomba */}
       <div className="detail-section">
-        <h2>Tema Lomba</h2>
-        <div className="info-box green">{competition.tema}</div>
+        <h2 className='text-center'>Tema Lomba</h2>
+        <div className="info-box green text-center">{competition.tema}</div>
       </div>
 
       {/* Tingkat */}
-      <div className="detail-section">
+      <div className="detail-section green">
         <h2>Tingkat</h2>
-        <div className="info-box green">{competition.tingkat}</div>
+        <div className="info-box">{competition.tingkat}</div>
       </div>
 
       {/* Kategori Peserta */}
-      <div className="detail-section">
+      <div className="detail-section purple">
         <h2>Kategori Peserta</h2>
-        <div className="info-box purple">
+        <div className="info-box">
           <ul>
             {competition.kategori?.map((kat, index) => (
               <li key={index}>{kat}</li>
@@ -33,9 +33,9 @@ const InformasiTab = ({ data }) => {
       </div>
 
       {/* Lokasi */}
-      <div className="detail-section">
+      <div className="detail-section orange">
         <h2>Lokasi</h2>
-        <div className="info-box purple checklist-item">
+        <div className="info-box checklist-item">
             <span className="checklist-icon">✔️</span>
             {competition.lokasi}
         </div>
@@ -44,15 +44,15 @@ const InformasiTab = ({ data }) => {
       {/* Detail Teknis */}
       <div className="detail-section">
         <div className="detail-grid-3">
-          <div className="info-box green">
+          <div className="info-box red">
             <strong>Maksimal Anggota Per Tim</strong>
             <p>{competition.maksimal_anggota} Orang</p>
           </div>
-          <div className="info-box green">
+          <div className="info-box red">
             <strong>Biaya Pendaftaran</strong>
             <p>{formatCurrency(competition.biaya_pendaftaran)}</p>
           </div>
-          <div className="info-box green">
+          <div className="info-box red">
             <strong>Total Kuota</strong>
             <p>{competition.jumlah_pendaftar} Orang</p>
           </div>
@@ -61,7 +61,7 @@ const InformasiTab = ({ data }) => {
 
       {/* Hadiah */}
       <div className="detail-section">
-        <h2>Hadiah</h2>
+        <h2 className='text-center'>Hadiah</h2>
         <div className="detail-grid-3">
             {competition.hadiah?.map(item => (
                 <div key={item.id} className="info-box orange">

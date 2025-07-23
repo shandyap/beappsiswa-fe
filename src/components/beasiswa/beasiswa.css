@@ -106,7 +106,7 @@
 
 .beasiswa-list-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
   padding: 3rem 0;
 }
@@ -126,6 +126,9 @@
 .detail-section.alternate h2 {
   color: #4D57D6;
 }
+.detail-section.green h2 {
+  color: #10B981;
+}
 
 .detail-section.alternate, .detail-section .checklist-item {
   color: #8C929C;
@@ -141,6 +144,10 @@
 
 .detail-section.alternate {
     background-color: #e8eaf6;
+}
+
+.detail-section.green {
+  background-color: #e0f2f1;
 }
 .detail-section.orange {
   background-color: #fff3e0;
@@ -162,4 +169,12 @@
 }
 .lokasi-item {
   flex: 1;
+}
+
+
+@media (min-width: 768px) {
+  .beasiswa-list-container {
+    /* Tampilkan 2 kolom dengan lebar yang sama */
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
