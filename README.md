@@ -7,7 +7,8 @@ Repositori ini berisi kode sumber untuk sisi frontend dari **BeAppsiswa**, sebua
 
 Di Indonesia, informasi mengenai beasiswa dan kompetisi seringkali tersebar di berbagai platform, membuatnya sulit diakses. Akibatnya, banyak talenta muda kehilangan kesempatan berharga. BeAppsiswa dibangun untuk menyelesaikan masalah ini dengan menyediakan sebuah portal terintegrasi (*one-stop solution*) di mana pengguna dapat dengan mudah mencari, dan menemukan peluang yang relevan untuk pengembangan diri mereka.
 
-![Tangkapan Layar Beranda BeAppsiswa](https://i.imgur.com/GzB6XQj.png) ## ✨ Fitur Utama
+![Tangkapan Layar Beranda BeAppsiswa](https://imgur.com/U4sZgkG)
+✨ Fitur Utama
 
 ### Untuk Pengguna Publik:
 -   **Halaman Beranda Dinamis:** Menampilkan 3 beasiswa dan 3 perlombaan terbaru.
@@ -17,6 +18,7 @@ Di Indonesia, informasi mengenai beasiswa dan kompetisi seringkali tersebar di b
 -   **Desain Responsif:** Tampilan yang dioptimalkan untuk perangkat desktop maupun mobile.
 -   **Animasi Modern:** Efek animasi saat *scroll* dan *loading* untuk pengalaman pengguna yang lebih baik.
 
+![Tangkapan Layar Beranda BeAppsiswa](https://imgur.com/fSwEFJC)
 ### Untuk Admin:
 -   **Login Admin:** Halaman login terpisah untuk masuk ke panel admin.
 -   **Dashboard Admin:** Ringkasan dan tabel manajemen untuk semua data.
