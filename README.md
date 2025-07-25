@@ -7,7 +7,7 @@ Repositori ini berisi kode sumber untuk sisi frontend dari **BeAppsiswa**, sebua
 
 Di Indonesia, informasi mengenai beasiswa dan kompetisi seringkali tersebar di berbagai platform, membuatnya sulit diakses. Akibatnya, banyak talenta muda kehilangan kesempatan berharga. BeAppsiswa dibangun untuk menyelesaikan masalah ini dengan menyediakan sebuah portal terintegrasi (*one-stop solution*) di mana pengguna dapat dengan mudah mencari, dan menemukan peluang yang relevan untuk pengembangan diri mereka.
 
-![Tangkapan Layar Beranda BeAppsiswa](https://imgur.com/U4sZgkG)
+![Tangkapan Layar Beranda BeAppsiswa](https://i.imgur.com/U4sZgkG.jpeg)
 ✨ Fitur Utama
 
 ### Untuk Pengguna Publik:
@@ -18,11 +18,11 @@ Di Indonesia, informasi mengenai beasiswa dan kompetisi seringkali tersebar di b
 -   **Desain Responsif:** Tampilan yang dioptimalkan untuk perangkat desktop maupun mobile.
 -   **Animasi Modern:** Efek animasi saat *scroll* dan *loading* untuk pengalaman pengguna yang lebih baik.
 
-![Tangkapan Layar Beranda BeAppsiswa](https://imgur.com/fSwEFJC)
+![Tangkapan Layar Beranda BeAppsiswa](https://i.imgur.com/fSwEFJC.jpeg)
 ### Untuk Admin:
 -   **Login Admin:** Halaman login terpisah untuk masuk ke panel admin.
 -   **Dashboard Admin:** Ringkasan dan tabel manajemen untuk semua data.
--   **CRUD Penuh:** Fungsionalitas untuk **Menambah (Create)**, **Membaca (Read)**, **Mengedit (Update)**, dan **Menghapus (Delete)** data beasiswa dan perlombaan melalui *modal form* interaktif.
+-   **CRUD Penuh:** Fungsionalitas untuk **Menambah (Create)**, **Mengedit (Update)**, dan **Menghapus (Delete)** data beasiswa dan perlombaan melalui *modal form* interaktif.
 -   **Navigasi Tab:** Antarmuka tab untuk beralih antara manajemen beasiswa dan perlombaan.
 
 ## 🛠️ Teknologi yang Digunakan
@@ -41,22 +41,26 @@ Untuk menjalankan proyek ini di lingkungan lokal, ikuti langkah-langkah berikut:
 
 1.  **Clone repositori ini:**
     ```bash
-    git clone [https://github.com/username/beappsiswa-fe.git](https://github.com/username/beappsiswa-fe.git)
+    git clone https://github.com/username/beappsiswa-fe.git
     cd beappsiswa-fe
     ```
 
-2.  **Instal semua dependensi:**
+2.  **Pindah Direktori:**
+    ```bash
+    cd beappsiswa-fe
+    ```
+    
+3.  **Buka VSCode:**
+    ```bash
+    code .
+    ```
+
+4.  **Instal semua dependensi:**
     ```bash
     npm install
     ```
 
-3.  **Buat file environment variable:**
-    Buat file bernama `.env` di folder root proyek dan tambahkan URL API backend-mu.
-    ```env
-    VITE_API_BASE_URL=http://localhost:5000
-    ```
-
-4.  **Jalankan server development:**
+5.  **Jalankan server development:**
     ```bash
     npm run dev
     ```
@@ -66,23 +70,23 @@ Untuk menjalankan proyek ini di lingkungan lokal, ikuti langkah-langkah berikut:
 
 -   `npm run dev`: Menjalankan aplikasi dalam mode development.
 -   `npm run build`: Mem-build aplikasi untuk produksi ke dalam folder `dist`.
--   `npm run lint`: Menjalankan linter ESLint untuk memeriksa kualitas kode.
--   `npm run preview`: Menjalankan server lokal untuk melihat hasil build produksi.
 
 ## 📁 Struktur Folder
 
 ```
+/public         # Aset statis seperti gambar dan ikon
 /src
-|-- /assets         # Aset statis seperti gambar dan ikon
 |-- /components     # Komponen-komponen reusable
-|   |-- /admin
-|   |-- /beranda
-|   |-- /beasiswa
-|   |-- /common
-|-- /context        # React Context untuk state management
-|-- /hooks          # Custom Hooks (e.g., useIntersectionObserver)
+|   |-- /admin      # Komponen Admin
+|   |-- /beranda    # Komponen Beranda
+|   |-- /beasiswa   # Komponen Beasiswa
+|   |-- /perlombaan # Komponen Perlombaan
+|-- /context        # React Context untuk Auth
+|-- /hooks          # Custom Hooks 
 |-- /pages          # Komponen utama untuk setiap halaman
 |-- /services       # Fungsi-fungsi untuk API call
+|-- /styles         # Global CSS
+|-- /utils          # Function pendukung utilitas kode
 |-- App.jsx         # Komponen utama & routing
 |-- main.jsx        # Titik masuk aplikasi
 ```
