@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { BsPencil, BsTrash, BsEye } from 'react-icons/bs';
 import { Button } from 'react-bootstrap';
+import Pagination from '../Pagination';
 
-const BeasiswaTable = ({scholarships, onEdit, onDelete}) => {
-
+const BeasiswaTable = ({
+  scholarships,
+  onEdit,
+  onDelete,
+  currentPage,
+  itemsPerPage,
+  totalItems,
+  onPageChange,
+}) => {
   if (!scholarships || scholarships.length === 0) {
-    return <p className='loading-text'>Belum ada data Beasiswa.</p>;
+    return <p className="loading-text">Tidak ada data beasiswa yang cocok.</p>;
   }
 
   return (
@@ -45,6 +53,12 @@ const BeasiswaTable = ({scholarships, onEdit, onDelete}) => {
           ))}
         </tbody>
       </table>
+      <Pagination
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        totalItems={totalItems}
+        onPageChange={onPageChange}
+      />
     </div>
   );
 };
