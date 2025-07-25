@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import DashboardHeader from '../components/admin/DashboardHeader'; 
 import QuickActions from '../components/admin/QuickActions';
 import '../components/admin/admin.css'; 
-import { Tab } from 'react-bootstrap';
+import SearchBar from '../components/SearchBar';
 import TabManagement from '../components/admin/TabManagement';
 import AddBeasiswaModal from '../components/admin/AddBeasiswaModal';
 import AddPerlombaanModal from '../components/admin/AddPerlombaanModal';
@@ -14,6 +14,9 @@ import EditPerlombaanModal from '../components/admin/EditPerlombaanModal';
 const AdminDashboard = () => {
   const { logout } = useAuth();
   const navigate = useNavigate();
+
+  // State untuk searchbar
+  const [searchTerm, setSearchTerm] = useState('');
 
   // State untuk mengontrol visibilitas modal
   const [showBeasiswaModal, setShowBeasiswaModal] = useState(false);
@@ -33,6 +36,10 @@ const AdminDashboard = () => {
   const handleLogout = () => {
     logout(); 
     navigate('/admin'); 
+  };
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
   };
 
   const handleOpenEditBeasiswa = (beasiswa) => {
@@ -55,11 +62,14 @@ const AdminDashboard = () => {
           onAddBeasiswaClick={() => setShowBeasiswaModal(true)}
           onAddLombaClick={() => setShowLombaModal(true)}
         />
+        <SearchBar onSearch={handleSearch} placeholderText="Cari berdasarkan judul..." />
         <TabManagement 
           refreshTrigger={refreshTrigger} 
           onEditBeasiswa={handleOpenEditBeasiswa}
           onEditPerlombaan={handleOpenEditPerlombaan}
-          onDataRefresh={handleSuccess}/>
+          onDataRefresh={handleSuccess}
+          searchTerm={searchTerm} 
+        />
       </main>
 
         <AddBeasiswaModal 

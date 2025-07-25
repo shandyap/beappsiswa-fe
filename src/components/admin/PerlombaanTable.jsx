@@ -2,8 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { getAllLomba } from '../../services/api.js'
 import { BsPencil, BsTrash, BsEye } from 'react-icons/bs';
 import { Button } from 'react-bootstrap';
+import Pagination from '../Pagination';
 
-const PerlombaanTable = ({competitions, onEdit, onDelete}) => {
+const PerlombaanTable = ({
+  competitions, 
+  onEdit, 
+  onDelete,
+  currentPage,
+  itemsPerPage,
+  totalItems,
+  onPageChange,
+}) => {
 
   if (!competitions || competitions.length === 0) {
     return <p className='loading-text'>Belum ada data Perlombaan.</p>;
@@ -44,6 +53,12 @@ const PerlombaanTable = ({competitions, onEdit, onDelete}) => {
           ))}
         </tbody>
       </table>
+      <Pagination
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        totalItems={totalItems}
+        onPageChange={onPageChange}
+      />
     </div>
   );
 };
