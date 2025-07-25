@@ -1,10 +1,11 @@
 # BeAppsiswa - Frontend
 
-[![Vercel Deployment](https://img.shields.io/badge/Deployment-Vercel-black?style=for-the-badge&logo=vercel)](https://beappsiswa-fe.vercel.app/) Repositori ini berisi kode sumber untuk sisi frontend dari **BeAppsiswa**, sebuah platform terpusat yang dirancang untuk memudahkan pelajar dan mahasiswa di Indonesia dalam menemukan informasi beasiswa dan perlombaan.
+[![Vercel Deployment](https://img.shields.io/badge/Deployment-Vercel-black?style=for-the-badge&logo=vercel)](https://beappsiswa-fe.vercel.app/) 
+Repositori ini berisi kode sumber untuk sisi frontend dari **BeAppsiswa**, sebuah platform terpusat yang dirancang untuk memudahkan pelajar dan mahasiswa di Indonesia dalam menemukan informasi beasiswa dan perlombaan.
 
 ## Deskripsi Proyek
 
-Di Indonesia, informasi mengenai beasiswa dan kompetisi seringkali tersebar di berbagai platform, membuatnya sulit diakses. Akibatnya, banyak talenta muda kehilangan kesempatan berharga. BeAppsiswa dibangun untuk menyelesaikan masalah ini dengan menyediakan sebuah portal terintegrasi (*one-stop solution*) di mana pengguna dapat dengan mudah mencari, memfilter, dan menemukan peluang yang relevan untuk pengembangan diri mereka.
+Di Indonesia, informasi mengenai beasiswa dan kompetisi seringkali tersebar di berbagai platform, membuatnya sulit diakses. Akibatnya, banyak talenta muda kehilangan kesempatan berharga. BeAppsiswa dibangun untuk menyelesaikan masalah ini dengan menyediakan sebuah portal terintegrasi (*one-stop solution*) di mana pengguna dapat dengan mudah mencari, dan menemukan peluang yang relevan untuk pengembangan diri mereka.
 
 ![Tangkapan Layar Beranda BeAppsiswa](https://i.imgur.com/GzB6XQj.png) ## ✨ Fitur Utama
 
