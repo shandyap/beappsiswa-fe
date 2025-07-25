@@ -42,7 +42,6 @@ Untuk menjalankan proyek ini di lingkungan lokal, ikuti langkah-langkah berikut:
 1.  **Clone repositori ini:**
     ```bash
     git clone https://github.com/username/beappsiswa-fe.git
-    cd beappsiswa-fe
     ```
 
 2.  **Pindah Direktori:**
